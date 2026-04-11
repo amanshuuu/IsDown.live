@@ -710,9 +710,9 @@ h1{font-size:clamp(26px,5vw,46px);font-weight:800;letter-spacing:-.5px;line-heig
 
   <!-- STAT STRIP -->
   <div class="stat-strip">
-    <div class="st"><div class="st-val" style="color:var(--ok)">99.5%</div><div class="st-lbl">Avg uptime this month</div></div>
-    <div class="st"><div class="st-val" style="color:var(--accent)">124ms</div><div class="st-lbl">Avg response time</div></div>
-    <div class="st"><div class="st-val" style="color:var(--warn)">4</div><div class="st-lbl">Incidents in 7 days</div></div>
+    <div class="st"><div class="st-val" id="statUptime" style="color:var(--ok)">—</div><div class="st-lbl">Avg uptime this month</div></div>
+    <div class="st"><div class="st-val" style="color:var(--accent)">~60s</div><div class="st-lbl">Check interval</div></div>
+    <div class="st"><div class="st-val" id="statIncidents" style="color:var(--warn)">—</div><div class="st-lbl">Incidents in 7 days</div></div>
     <div class="st"><div class="st-val">70+</div><div class="st-lbl">Services monitored</div></div>
   </div>
 
@@ -733,11 +733,11 @@ h1{font-size:clamp(26px,5vw,46px);font-weight:800;letter-spacing:-.5px;line-heig
 
   <!-- FOOTER -->
   <footer class="footer">
-    <span>© 2026 IsDown.live — ad-free, always</span>
+    <span>© <span id="footerYear">2026</span> IsDown.live — ad-free, always</span>
     <div class="footer-links">
-      <a href="#">API</a>
-      <a href="#">Privacy</a>
-      <a href="#">Status</a>
+      <a href="mailto:hello@isdown.live">Contact</a>
+      <a href="/privacy" onclick="navigate(event,'/privacy')">Privacy</a>
+      <a href="/" onclick="navigate(event,'/')">Home</a>
     </div>
   </footer>
 </div>
@@ -1983,7 +1983,7 @@ function renderServicePage(s){
     <footer class="sp-footer">
       <a href="/" onclick="navigate(event,'/')">← All services</a>
       <span>© 2026 IsDown.live — ad-free, always</span>
-      <div style="display:flex;gap:16px"><a href="/">Home</a><a href="#">API</a><a href="#">Privacy</a></div>
+      <div style="display:flex;gap:16px"><a href="/">Home</a><a href="mailto:hello@isdown.live">Contact</a><a href="/privacy" onclick="navigate(event,'/privacy')">Privacy</a></div>
     </footer>
   `;
 
@@ -2140,6 +2140,21 @@ window.addEventListener('popstate', route);
 updateClock();
 setInterval(updateClock, 1000);
 route(); // router handles rendering
+
+// Auto year in footer
+const yrEl = document.getElementById('footerYear');
+if(yrEl) yrEl.textContent = new Date().getFullYear();
+
+// Dynamic stat strip
+function updateStatStrip(){
+  const avgUptime = (SVC.reduce((a,s)=>a+s.u,0)/SVC.length).toFixed(1)+'%';
+  const incidents = INC.filter(i=>i.st!=='resolved').length;
+  const upEl = document.getElementById('statUptime');
+  const incEl = document.getElementById('statIncidents');
+  if(upEl) upEl.textContent = avgUptime;
+  if(incEl) incEl.textContent = incidents;
+}
+updateStatStrip();
 
 const H=document.documentElement;
 // Always dark mode — no toggle
