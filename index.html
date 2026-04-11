@@ -635,7 +635,7 @@ h1{font-size:clamp(26px,5vw,46px);font-weight:800;letter-spacing:-.5px;line-heig
     </div>
     <div class="nav-right">
       <span id="pollStatus" style="font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;display:none"></span>
-      </div>
+      <button onclick="toggleDark()" id="themeBtn" style="background:none;border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--muted);font-size:13px;cursor:pointer;transition:all .13s" title="Toggle theme">🌙</button>
     </div>
   </div>
 </nav>
@@ -704,7 +704,7 @@ h1{font-size:clamp(26px,5vw,46px);font-weight:800;letter-spacing:-.5px;line-heig
   <!-- SERVICES -->
   <div class="sec-head">
     <h2 id="svcLabel">Services</h2>
-    <span class="sec-meta">30-day uptime · response</span>
+    <span class="sec-meta">30-day uptime</span>
   </div>
   <div class="svc-list" id="svcList"></div>
 
@@ -1825,7 +1825,7 @@ function renderServicePage(s){
           </div>
           <div>
             <h1 class="sp-h1">Is ${s.name} down right now?</h1>
-            <div class="sp-meta">${s.cat} · isdown.live/${s.id}</div>
+            <div class="sp-meta">${s.cat} · isdownlive.netlify.app/${s.id}</div>
           </div>
         </div>
         <div class="sp-status-banner ${dn?'sp-down':dg?'sp-deg':'sp-up'}">
@@ -1982,7 +1982,7 @@ function renderServicePage(s){
     </div>
     <footer class="sp-footer">
       <a href="/" onclick="navigate(event,'/')">← All services</a>
-      <span>© 2026 IsDown.live — ad-free, always</span>
+      <span>© <span id="spFooterYear"></span> IsDown.live — ad-free, always</span>
       <div style="display:flex;gap:16px"><a href="/">Home</a><a href="mailto:hello@isdown.live">Contact</a><a href="/privacy" onclick="navigate(event,'/privacy')">Privacy</a></div>
     </footer>
   `;
@@ -2117,6 +2117,20 @@ function route(){
     );
     injectServiceSchema(svc);
     renderServicePage(svc);
+    // set service page footer year
+    const spYr = document.getElementById('spFooterYear');
+    if(spYr) spYr.textContent = new Date().getFullYear();
+  } else if(slug && slug !== '') {
+    // 404 — unknown service
+    document.getElementById('homePage').style.display='none';
+    document.getElementById('svcPage').style.display='block';
+    document.getElementById('svcPage').innerHTML=`
+      <div style="text-align:center;padding:80px 20px">
+        <div style="font-size:64px;margin-bottom:16px">🔍</div>
+        <h1 style="font-size:28px;font-weight:800;margin-bottom:10px">Service not found</h1>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:28px">We don't monitor "<strong>${slug}</strong>" yet. Check the full list below.</p>
+        <button class="btn btn-p" onclick="navigate(null,'/')">← Back to all services</button>
+      </div>`;
   } else {
     // HOMEPAGE
     setMeta(
@@ -2157,8 +2171,19 @@ function updateStatStrip(){
 updateStatStrip();
 
 const H=document.documentElement;
-// Always dark mode — no toggle
-H.classList.add('dark');
+// Theme — respect saved preference, default dark
+const savedTheme = localStorage.getItem('theme');
+if(savedTheme === 'light') { H.classList.remove('dark'); } else { H.classList.add('dark'); }
+
+function toggleDark(){
+  const isDark = H.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const btn = document.getElementById('themeBtn');
+  if(btn) btn.textContent = isDark ? '🌙' : '☀️';
+}
+// Set initial icon
+const themeBtn = document.getElementById('themeBtn');
+if(themeBtn) themeBtn.textContent = H.classList.contains('dark') ? '🌙' : '☀️';
 // Auto-start live polling
 startPolling();
 
