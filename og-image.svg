@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0c"/>
+      <stop offset="100%" style="stop-color:#161618"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0a84ff"/>
+      <stop offset="100%" style="stop-color:#4f7bff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Logo box -->
+  <rect x="80" y="180" width="80" height="80" rx="20" fill="url(#accent)"/>
+  <text x="120" y="233" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="36" font-weight="800" fill="white" text-anchor="middle">↓</text>
+
+  <!-- Brand name -->
+  <text x="80" y="320" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="64" font-weight="800" fill="white" letter-spacing="-2">IsDown.live</text>
+
+  <!-- Tagline -->
+  <text x="80" y="385" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="28" fill="rgba(255,255,255,0.55)" letter-spacing="-0.5">Is it down for everyone? Real-time status for 70+ services.</text>
+
+  <!-- Status pills -->
+  <rect x="80" y="430" width="140" height="44" rx="22" fill="rgba(48,209,88,0.15)"/>
+  <circle cx="112" cy="452" r="6" fill="#30d158"/>
+  <text x="128" y="458" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#30d158">Spotify</text>
+
+  <rect x="240" y="430" width="140" height="44" rx="22" fill="rgba(255,59,48,0.15)"/>
+  <circle cx="272" cy="452" r="6" fill="#ff3b30"/>
+  <text x="288" y="458" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#ff3b30">GitHub</text>
+
+  <rect x="400" y="430" width="160" height="44" rx="22" fill="rgba(48,209,88,0.15)"/>
+  <circle cx="432" cy="452" r="6" fill="#30d158"/>
+  <text x="448" y="458" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#30d158">Discord</text>
+
+  <rect x="580" y="430" width="150" height="44" rx="22" fill="rgba(48,209,88,0.15)"/>
+  <circle cx="612" cy="452" r="6" fill="#30d158"/>
+  <text x="628" y="458" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#30d158">Netflix</text>
+
+  <!-- No ads badge -->
+  <rect x="80" y="500" width="130" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="145" y="523" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" font-weight="600" fill="rgba(255,255,255,0.5)" text-anchor="middle">No ads · Always free</text>
+
+  <!-- Right side decorative uptime bars -->
+  <rect x="900" y="200" width="8" height="60" rx="4" fill="rgba(48,209,88,0.7)"/>
+  <rect x="920" y="220" width="8" height="40" rx="4" fill="rgba(48,209,88,0.7)"/>
+  <rect x="940" y="180" width="8" height="80" rx="4" fill="rgba(48,209,88,0.7)"/>
+  <rect x="960" y="210" width="8" height="50" rx="4" fill="rgba(48,209,88,0.7)"/>
+  <rect x="980" y="190" width="8" height="70" rx="4" fill="rgba(48,209,88,0.7)"/>
+  <rect x="1000" y="230" width="8" height="30" rx="4" fill="rgba(255,59,48,0.8)"/>
+  <rect x="1020" y="200" width="8" height="60" rx="4" fill="rgba(48,209,88,0.7)"/>
+  <rect x="1040" y="215" width="8" height="45" rx="4" fill="rgba(48,209,88,0.7)"/>
+  <rect x="1060" y="185" width="8" height="75" rx="4" fill="rgba(255,159,10,0.8)"/>
+  <rect x="1080" y="205" width="8" height="55" rx="4" fill="rgba(48,209,88,0.7)"/>
+</svg>

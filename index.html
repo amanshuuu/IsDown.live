@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="IsDown.live — Is it down for everyone?"/>
 <meta name="twitter:description" content="Real-time status for 70+ services. No ads. Get notified the moment it recovers."/>
 <meta name="twitter:site" content="@isdownlive"/>
-<meta property="og:image" content="https://isdownlive.netlify.app/og-image.png"/>
+<meta property="og:image" content="https://isdownlive.netlify.app/og-image.svg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content="IsDown.live"/>
@@ -1683,8 +1683,11 @@ document.head.appendChild(sd);
 ═══════════════════════════════════════════════════ */
 
 function getSlug(){
-  // reads #/spotify → "spotify"
-  return window.location.hash.replace(/^#\/?/,'').toLowerCase().replace(/\/+$/,'');
+  // reads /spotify → "spotify" (real URL path routing)
+  const path = window.location.pathname.replace(/^\/+/,'').replace(/\/+$/,'').toLowerCase();
+  // fallback: also support legacy hash links
+  if(!path) return window.location.hash.replace(/^#\/?/,'').toLowerCase().replace(/\/+$/,'');
+  return path;
 }
 
 function slugToService(slug){
@@ -1802,7 +1805,7 @@ function renderServicePage(s){
   document.getElementById('svcPage').innerHTML=`
     <!-- BREADCRUMB -->
     <nav class="breadcrumb" aria-label="breadcrumb">
-      <a href="#/" onclick="navigate(event,'/')">← IsDown.live</a>
+      <a href="/" onclick="navigate(event,'/')">← IsDown.live</a>
       <span class="bc-sep">/</span>
       <span>${s.name} Status</span>
     </nav>
@@ -1973,9 +1976,9 @@ function renderServicePage(s){
       <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</button>
     </div>
     <footer class="sp-footer">
-      <a href="#/" onclick="navigate(event,'/')">← All services</a>
+      <a href="/" onclick="navigate(event,'/')">← All services</a>
       <span>© 2026 IsDown.live — ad-free, always</span>
-      <div style="display:flex;gap:16px"><a href="#/">Home</a><a href="#">API</a><a href="#">Privacy</a></div>
+      <div style="display:flex;gap:16px"><a href="/">Home</a><a href="#">API</a><a href="#">Privacy</a></div>
     </footer>
   `;
 
@@ -2041,7 +2044,7 @@ function renderServicePage(s){
     if(relEl){
       const related=SVC.filter(r=>r.cat===s.cat&&r.id!==s.id).slice(0,4);
       relEl.innerHTML=related.map(r=>`
-        <a class="sp-rel-card" href="#/${r.id}" onclick="navigate(event,'/${r.id}')">
+        <a class="sp-rel-card" href="/$\{r.id\}" onclick="navigate(event,'/${r.id}')">
           <img src="${logo(r.d)}" alt="${r.name}" width="28" height="28" onerror="this.style.display='none'">
           <span class="sp-rel-name">${r.name}</span>
           <span class="pill ${r.s==='up'?'p-up':r.s==='down'?'p-down':'p-deg'}" style="font-size:10px;padding:3px 8px">
@@ -2079,9 +2082,9 @@ function spReport(id,name){
 ══════════════════════════════ */
 function navigate(e, path){
   if(e) e.preventDefault();
-  // Use hash routing — works in all environments including sandboxed iframes
-  window.location.hash = path === '/' ? '' : path;
-  // hashchange event fires automatically → route() is called
+  // Real URL paths for SEO — Netlify rewrites all paths to index.html
+  window.history.pushState({}, '', path === '/' ? '/' : path);
+  route();
 }
 
 function route(){
@@ -2125,8 +2128,8 @@ function route(){
   }
 }
 
-// Hash routing — works everywhere including sandboxed iframes
-window.addEventListener('hashchange', route);
+// Real URL routing — back/forward button support
+window.addEventListener('popstate', route);
 
 /* ── Init ── */
 updateClock();
