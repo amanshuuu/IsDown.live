@@ -12,11 +12,20 @@
 <meta property="og:title" content="IsDown.live — Is it down for everyone?"/>
 <meta property="og:description" content="Real-time status for 70+ services — Spotify, GitHub, Netflix, AWS & more. No ads. Instant alerts when it recovers."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://isdown.live"/>
+<meta property="og:url" content="https://isdownlive.netlify.app"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="IsDown.live — Is it down for everyone?"/>
 <meta name="twitter:description" content="Real-time status for 70+ services. No ads. Get notified the moment it recovers."/>
-<link rel="canonical" href="https://isdown.live"/>
+<meta name="twitter:site" content="@isdownlive"/>
+<meta property="og:image" content="https://isdownlive.netlify.app/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="IsDown.live"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="robots" content="index, follow"/>
+<meta name="keywords" content="is it down, service status, outage checker, is spotify down, is github down, is netflix down, is discord down, downdetector, website down"/>
+<link rel="canonical" href="https://isdownlive.netlify.app"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <title>IsDown.live — Real-time Service Status</title>
 <style>
@@ -708,6 +717,14 @@ h1{font-size:clamp(26px,5vw,46px);font-weight:800;letter-spacing:-.5px;line-heig
     <span class="sec-meta">Last 24 hours</span>
   </div>
   <div class="inc-feed" id="incFeed"></div>
+
+  <!-- SEO TEXT BLOCK — crawlable content for Google -->
+  <div style="margin-bottom:28px;padding:20px 24px;background:var(--card-bg-actual);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow)">
+    <h2 style="font-size:16px;font-weight:700;margin-bottom:10px">About IsDown.live</h2>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:8px">IsDown.live is a free, real-time service status checker that monitors 70+ popular services including Spotify, GitHub, Netflix, Discord, AWS, ChatGPT, and more. We check every service every 60 seconds and instantly surface outages, degradation, and slowdowns.</p>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:8px">Wondering "is it down for everyone or just me?" — IsDown.live answers that instantly. See live user reports, uptime history, and response time charts for every service. No account needed, no ads, works on all devices.</p>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7">Set up instant email or push notifications so you're the first to know when your favourite service recovers. IsDown.live is the fastest way to check if Spotify, GitHub, Netflix, Discord, or any other service is down right now.</p>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -1646,7 +1663,7 @@ const schema={
   "@context":"https://schema.org",
   "@type":"WebApplication",
   "name":"IsDown.live",
-  "url":"https://isdown.live",
+  "url":"https://isdownlive.netlify.app",
   "description":"Real-time status checker for 70+ services. No ads. Instant push alerts when services recover.",
   "applicationCategory":"UtilitiesApplication",
   "operatingSystem":"Any",
@@ -1696,6 +1713,27 @@ function setMeta(title, desc, canonical){
 }
 
 /* ── Inject Schema.org for a specific service ── */
+/* ── FAQ Schema for homepage — boosts Google rich results ── */
+function injectFAQSchema(){
+  const existing = document.getElementById('faq-schema');
+  if(existing) existing.remove();
+  const sd = document.createElement('script');
+  sd.id = 'faq-schema';
+  sd.type = 'application/ld+json';
+  sd.textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How do I check if a website is down?","acceptedAnswer":{"@type":"Answer","text":"Visit IsDown.live and search for the service. We check 70+ services every 60 seconds and show real-time outage status, uptime history, and user reports."}},
+      {"@type":"Question","name":"Is IsDown.live free?","acceptedAnswer":{"@type":"Answer","text":"Yes, IsDown.live is completely free and ad-free. No account required to check service status or set up outage alerts."}},
+      {"@type":"Question","name":"How do I get notified when a service comes back online?","acceptedAnswer":{"@type":"Answer","text":"Click the Watch button next to any service on IsDown.live and enter your email. We'll send you an instant alert the moment the service recovers."}},
+      {"@type":"Question","name":"Is Spotify down right now?","acceptedAnswer":{"@type":"Answer","text":"Check the real-time Spotify status on IsDown.live. We monitor Spotify every 60 seconds and show live outage reports from users worldwide."}},
+      {"@type":"Question","name":"Is GitHub down right now?","acceptedAnswer":{"@type":"Answer","text":"Check the real-time GitHub status on IsDown.live. We track GitHub uptime, CI/CD issues, and API degradation in real time."}}
+    ]
+  });
+  document.head.appendChild(sd);
+}
+
 function injectServiceSchema(s){
   const existing = document.getElementById('svc-schema');
   if(existing) existing.remove();
@@ -1706,13 +1744,13 @@ function injectServiceSchema(s){
     "@context":"https://schema.org",
     "@type":"WebPage",
     "name":`Is ${s.name} Down? — Real-time Status`,
-    "url":`https://isdown.live/${s.id}`,
+    "url":`https://isdownlive.netlify.app/${s.id}`,
     "description":`Check if ${s.name} is down right now. Live outage reports, uptime history, response time, and instant alerts when ${s.name} recovers.`,
     "breadcrumb":{
       "@type":"BreadcrumbList",
       "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"IsDown.live","item":"https://isdown.live"},
-        {"@type":"ListItem","position":2,"name":s.name,"item":`https://isdown.live/${s.id}`}
+        {"@type":"ListItem","position":1,"name":"IsDown.live","item":"https://isdownlive.netlify.app"},
+        {"@type":"ListItem","position":2,"name":s.name,"item":`https://isdownlive.netlify.app/${s.id}`}
       ]
     }
   });
@@ -1730,7 +1768,7 @@ function injectHomeSchema(){
     "@context":"https://schema.org",
     "@type":"WebApplication",
     "name":"IsDown.live",
-    "url":"https://isdown.live",
+    "url":"https://isdownlive.netlify.app",
     "description":"Real-time status checker for 70+ services. No ads. Instant push alerts when services recover.",
     "applicationCategory":"UtilitiesApplication",
     "operatingSystem":"Any",
@@ -2063,7 +2101,7 @@ function route(){
 
   if(svc){
     // SERVICE PAGE
-    const canonicalUrl = `https://isdown.live/${svc.id}`;
+    const canonicalUrl = `https://isdownlive.netlify.app/${svc.id}`;
     setMeta(
       `Is ${svc.name} Down Right Now? — Live Status | IsDown.live`,
       `Check if ${svc.name} is down. Real-time outage reports, uptime history, and instant alerts when ${svc.name} recovers. No ads, always free.`,
@@ -2076,9 +2114,10 @@ function route(){
     setMeta(
       'IsDown.live — Is it down for everyone? Real-time Service Status',
       'Real-time status checker for 70+ services including Spotify, GitHub, Netflix, Discord, AWS and more. No ads. Instant push alerts when services recover.',
-      'https://isdown.live'
+      'https://isdownlive.netlify.app'
     );
     injectHomeSchema();
+    injectFAQSchema();
     document.getElementById('homePage').style.display='block';
     document.getElementById('svcPage').style.display='none';
     renderSvc(SVC);
