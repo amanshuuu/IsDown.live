@@ -842,7 +842,7 @@ window.addEventListener('beforeinstallprompt',e=>{
   e.preventDefault();
   deferredPrompt=e;
   if(!localStorage.getItem('pwa-dismissed')){
-    installBanner.style.display='flex';
+    installBanner.classList.add('show');
   }
 });
 
@@ -851,17 +851,17 @@ installBtn&&installBtn.addEventListener('click',async()=>{
   deferredPrompt.prompt();
   const {outcome}=await deferredPrompt.userChoice;
   deferredPrompt=null;
-  installBanner.style.display='none';
+  installBanner.classList.remove('show');
   toast(outcome==='accepted'?'? App installed!':'Maybe later');
 });
 
 installDismiss&&installDismiss.addEventListener('click',()=>{
-  installBanner.style.display='none';
+  installBanner.classList.remove('show');
   localStorage.setItem('pwa-dismissed','1');
 });
 
 window.addEventListener('appinstalled',()=>{
-  installBanner.style.display='none';
+  installBanner.classList.remove('show');
   toast('← IsDown.live installed as app');
 });
 
@@ -1370,7 +1370,7 @@ updateStatStrip();
 
 const H=document.documentElement;
 const savedTheme = localStorage.getItem('theme');
-if(savedTheme === 'light') { H.classList.remove('dark'); } else { H.classList.add('dark'); }
+if(savedTheme === 'dark') { H.classList.add('dark'); }
 
 function toggleDark(){
   const isDark = H.classList.toggle('dark');
