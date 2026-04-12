@@ -1,17 +1,17 @@
-/* ΓöÇΓöÇ Data ΓöÇΓöÇ */
+/* -- Data -- */
 const SVC=[
-  // ΓöÇΓöÇ Music ΓöÇΓöÇ
+  // -- Music --
   {id:'spotify',    name:'Spotify',       d:'spotify.com',        cat:'Music',       s:'down',     u:96.2,  r:null,reports:8432},
   {id:'applemusic', name:'Apple Music',   d:'apple.com',          cat:'Music',       s:'up',       u:99.6,  r:88,  reports:0},
   {id:'youtube',    name:'YouTube',       d:'youtube.com',        cat:'Video',       s:'up',       u:99.8,  r:108, reports:0},
   {id:'tidal',      name:'Tidal',         d:'tidal.com',          cat:'Music',       s:'up',       u:99.1,  r:142, reports:0},
-  // ΓöÇΓöÇ Streaming ΓöÇΓöÇ
+  // -- Streaming --
   {id:'netflix',    name:'Netflix',       d:'netflix.com',        cat:'Streaming',   s:'up',       u:99.9,  r:91,  reports:0},
   {id:'disneyplus', name:'Disney+',       d:'disneyplus.com',     cat:'Streaming',   s:'up',       u:99.5,  r:134, reports:0},
   {id:'primevideo', name:'Prime Video',   d:'primevideo.com',     cat:'Streaming',   s:'up',       u:99.4,  r:155, reports:0},
   {id:'hulu',       name:'Hulu',          d:'hulu.com',           cat:'Streaming',   s:'up',       u:99.2,  r:178, reports:0},
   {id:'twitch',     name:'Twitch',        d:'twitch.tv',          cat:'Streaming',   s:'up',       u:99.3,  r:122, reports:0},
-  // ΓöÇΓöÇ Social ΓöÇΓöÇ
+  // -- Social --
   {id:'twitter',    name:'X (Twitter)',   d:'x.com',              cat:'Social',      s:'up',       u:98.2,  r:184, reports:0},
   {id:'instagram',  name:'Instagram',     d:'instagram.com',      cat:'Social',      s:'up',       u:99.6,  r:131, reports:0},
   {id:'facebook',   name:'Facebook',      d:'facebook.com',       cat:'Social',      s:'up',       u:99.7,  r:118, reports:0},
@@ -19,51 +19,51 @@ const SVC=[
   {id:'reddit',     name:'Reddit',        d:'reddit.com',         cat:'Social',      s:'up',       u:99.3,  r:165, reports:0},
   {id:'snapchat',   name:'Snapchat',      d:'snapchat.com',       cat:'Social',      s:'up',       u:99.1,  r:188, reports:0},
   {id:'pinterest',  name:'Pinterest',     d:'pinterest.com',      cat:'Social',      s:'up',       u:99.5,  r:143, reports:0},
-  // ΓöÇΓöÇ Chat ΓöÇΓöÇ
+  // -- Chat --
   {id:'discord',    name:'Discord',       d:'discord.com',        cat:'Chat',        s:'up',       u:99.5,  r:143, reports:0},
   {id:'whatsapp',   name:'WhatsApp',      d:'whatsapp.com',       cat:'Chat',        s:'up',       u:99.9,  r:77,  reports:0},
   {id:'telegram',   name:'Telegram',      d:'telegram.org',       cat:'Chat',        s:'up',       u:99.8,  r:91,  reports:0},
   {id:'signal',     name:'Signal',        d:'signal.org',         cat:'Chat',        s:'up',       u:99.7,  r:104, reports:0},
-  // ΓöÇΓöÇ AI ΓöÇΓöÇ
+  // -- AI --
   {id:'openai',     name:'ChatGPT',       d:'openai.com',         cat:'AI',          s:'up',       u:98.7,  r:198, reports:0},
   {id:'claude',     name:'Claude',        d:'anthropic.com',      cat:'AI',          s:'up',       u:99.4,  r:167, reports:0},
   {id:'gemini',     name:'Gemini',        d:'gemini.google.com',  cat:'AI',          s:'up',       u:99.6,  r:144, reports:0},
   {id:'midjourney', name:'Midjourney',    d:'midjourney.com',     cat:'AI',          s:'up',       u:98.9,  r:221, reports:0},
-  // ΓöÇΓöÇ Cloud ΓöÇΓöÇ
+  // -- Cloud --
   {id:'aws',        name:'AWS',           d:'aws.amazon.com',     cat:'Cloud',       s:'up',       u:99.97, r:42,  reports:0},
   {id:'gcp',        name:'Google Cloud',  d:'cloud.google.com',   cat:'Cloud',       s:'up',       u:99.95, r:38,  reports:0},
   {id:'azure',      name:'Azure',         d:'azure.microsoft.com',cat:'Cloud',       s:'up',       u:99.93, r:51,  reports:0},
   {id:'vercel',     name:'Vercel',        d:'vercel.com',         cat:'Cloud',       s:'up',       u:99.8,  r:64,  reports:0},
   {id:'netlify',    name:'Netlify',       d:'netlify.com',        cat:'Cloud',       s:'up',       u:99.7,  r:72,  reports:0},
   {id:'cloudflare', name:'Cloudflare',    d:'cloudflare.com',     cat:'Network',     s:'up',       u:99.99, r:17,  reports:0},
-  // ΓöÇΓöÇ Dev Tools ΓöÇΓöÇ
+  // -- Dev Tools --
   {id:'github',     name:'GitHub',        d:'github.com',         cat:'Dev Tools',   s:'degraded', u:99.1,  r:440, reports:2104},
   {id:'gitlab',     name:'GitLab',        d:'gitlab.com',         cat:'Dev Tools',   s:'up',       u:99.4,  r:188, reports:0},
   {id:'jira',       name:'Jira',          d:'atlassian.com',      cat:'Dev Tools',   s:'up',       u:99.3,  r:211, reports:0},
   {id:'npm',        name:'npm',           d:'npmjs.com',          cat:'Dev Tools',   s:'up',       u:99.6,  r:134, reports:0},
   {id:'docker',     name:'Docker Hub',    d:'hub.docker.com',     cat:'Dev Tools',   s:'up',       u:99.2,  r:167, reports:0},
-  // ΓöÇΓöÇ Work / Productivity ΓöÇΓöÇ
+  // -- Work / Productivity --
   {id:'slack',      name:'Slack',         d:'slack.com',          cat:'Work',        s:'up',       u:99.7,  r:109, reports:0},
   {id:'zoom',       name:'Zoom',          d:'zoom.us',            cat:'Work',        s:'up',       u:99.5,  r:133, reports:0},
   {id:'teams',      name:'MS Teams',      d:'teams.microsoft.com',cat:'Work',        s:'up',       u:99.4,  r:156, reports:0},
   {id:'notion',     name:'Notion',        d:'notion.so',          cat:'Productivity',s:'up',       u:99.4,  r:201, reports:0},
   {id:'trello',     name:'Trello',        d:'trello.com',         cat:'Productivity',s:'up',       u:99.5,  r:177, reports:0},
   {id:'gsuite',     name:'Google Workspace',d:'workspace.google.com',cat:'Work',    s:'up',       u:99.8,  r:66,  reports:0},
-  // ΓöÇΓöÇ Design ΓöÇΓöÇ
+  // -- Design --
   {id:'figma',      name:'Figma',         d:'figma.com',          cat:'Design',      s:'up',       u:99.6,  r:154, reports:0},
   {id:'canva',      name:'Canva',         d:'canva.com',          cat:'Design',      s:'up',       u:99.3,  r:198, reports:0},
-  // ΓöÇΓöÇ Finance ΓöÇΓöÇ
+  // -- Finance --
   {id:'stripe',     name:'Stripe',        d:'stripe.com',         cat:'Finance',     s:'up',       u:99.95, r:78,  reports:0},
   {id:'paypal',     name:'PayPal',        d:'paypal.com',         cat:'Finance',     s:'up',       u:99.7,  r:212, reports:0},
   {id:'wise',       name:'Wise',          d:'wise.com',           cat:'Finance',     s:'up',       u:99.6,  r:188, reports:0},
   {id:'coinbase',   name:'Coinbase',      d:'coinbase.com',       cat:'Finance',     s:'up',       u:98.8,  r:234, reports:0},
-  // ΓöÇΓöÇ Gaming ΓöÇΓöÇ
+  // -- Gaming --
   {id:'steam',      name:'Steam',         d:'store.steampowered.com',cat:'Gaming',   s:'up',       u:99.2,  r:144, reports:0},
   {id:'xbox',       name:'Xbox Live',     d:'xbox.com',           cat:'Gaming',      s:'up',       u:99.1,  r:167, reports:0},
   {id:'psn',        name:'PlayStation',   d:'playstation.com',    cat:'Gaming',      s:'up',       u:99.0,  r:188, reports:0},
   {id:'epicgames',  name:'Epic Games',    d:'epicgames.com',      cat:'Gaming',      s:'up',       u:98.8,  r:212, reports:0},
   {id:'roblox',     name:'Roblox',        d:'roblox.com',         cat:'Gaming',      s:'up',       u:99.1,  r:178, reports:0},
-  // ΓöÇΓöÇ ISP / Telecom ΓöÇΓöÇ
+  // -- ISP / Telecom --
   {id:'att',        name:'AT&T',          d:'att.com',            cat:'Telecom',     s:'up',       u:98.9,  r:244, reports:0},
   {id:'verizon',    name:'Verizon',       d:'verizon.com',        cat:'Telecom',     s:'up',       u:98.7,  r:267, reports:0},
   {id:'comcast',    name:'Xfinity',       d:'xfinity.com',        cat:'Telecom',     s:'up',       u:98.4,  r:288, reports:0},
@@ -71,30 +71,30 @@ const SVC=[
   {id:'jio',        name:'Jio',           d:'jio.com',            cat:'Telecom',     s:'up',       u:98.6,  r:301, reports:0},
   {id:'airtel',     name:'Airtel',        d:'airtel.in',          cat:'Telecom',     s:'up',       u:98.5,  r:312, reports:0},
   {id:'vodafone',   name:'Vodafone',      d:'vodafone.com',       cat:'Telecom',     s:'up',       u:98.3,  r:289, reports:0},
-  // ΓöÇΓöÇ Search / Infra ΓöÇΓöÇ
+  // -- Search / Infra --
   {id:'google',     name:'Google',        d:'google.com',         cat:'Search',      s:'up',       u:99.99, r:36,  reports:0},
   {id:'gmail',      name:'Gmail',         d:'gmail.com',          cat:'Work',        s:'up',       u:99.9,  r:58,  reports:0},
   {id:'gdrive',     name:'Google Drive',  d:'drive.google.com',   cat:'Productivity',s:'up',       u:99.85, r:71,  reports:0},
   {id:'dropbox',    name:'Dropbox',       d:'dropbox.com',        cat:'Productivity',s:'up',       u:99.4,  r:188, reports:0},
-  // ΓöÇΓöÇ E-commerce ΓöÇΓöÇ
+  // -- E-commerce --
   {id:'amazon',     name:'Amazon',        d:'amazon.com',         cat:'Shopping',    s:'up',       u:99.95, r:67,  reports:0},
   {id:'ebay',       name:'eBay',          d:'ebay.com',           cat:'Shopping',    s:'up',       u:99.6,  r:134, reports:0},
   {id:'shopify',    name:'Shopify',       d:'shopify.com',        cat:'Shopping',    s:'up',       u:99.7,  r:112, reports:0},
 ];
 
 const INC=[
-  {name:'Spotify',  d:'spotify.com',   title:'Playback failure ΓÇö users globally cannot stream', time:'12 min ago',st:'outage'},
+  {name:'Spotify',  d:'spotify.com',   title:'Playback failure - users globally cannot stream', time:'12 min ago',st:'outage'},
   {name:'GitHub',   d:'github.com',    title:'Actions & CI/CD pipelines severely degraded',     time:'38 min ago',st:'degraded'},
-  {name:'Discord',  d:'discord.com',   title:'Message delivery issues ΓÇö now fully resolved',    time:'2 hr ago',  st:'resolved'},
-  {name:'AWS',      d:'aws.amazon.com',title:'us-east-1 elevated error rates ΓÇö resolved',       time:'5 hr ago',  st:'resolved'},
-  {name:'ChatGPT',  d:'openai.com',    title:'API 503 errors ΓÇö resolved after 47 minutes',      time:'9 hr ago',  st:'resolved'},
+  {name:'Discord',  d:'discord.com',   title:'Message delivery issues - now fully resolved',    time:'2 hr ago',  st:'resolved'},
+  {name:'AWS',      d:'aws.amazon.com',title:'us-east-1 elevated error rates - resolved',       time:'5 hr ago',  st:'resolved'},
+  {name:'ChatGPT',  d:'openai.com',    title:'API 503 errors - resolved after 47 minutes',      time:'9 hr ago',  st:'resolved'},
 ];
 
-/* ΓöÇΓöÇ State ΓöÇΓöÇ */
+/* -- State -- */
 let activeF='all';
 const watched=new Set();
 
-/* ΓöÇΓöÇ Helpers ΓöÇΓöÇ */
+/* -- Helpers -- */
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const logo=d=>`https://www.google.com/s2/favicons?domain=${d}&sz=64`;
 
@@ -134,15 +134,15 @@ function buildBars(s,n=15){
   return h;
 }
 
-/* ΓöÇΓöÇ Render services ΓöÇΓöÇ */
+/* -- Render services -- */
 function renderSvc(list){
   const el=document.getElementById('svcList');
   list=[...list].sort((a,b)=>({down:0,degraded:1,up:2}[a.s])-({down:0,degraded:1,up:2}[b.s]));
 
   const dn=list.filter(s=>s.s==='down').length, dg=list.filter(s=>s.s==='degraded').length;
   let lbl=`${list.length} service${list.length!==1?'s':''}`;
-  if(dn) lbl+=` ┬╖ <span style="color:var(--bad)">${dn} down</span>`;
-  if(dg) lbl+=` ┬╖ <span style="color:var(--warn)">${dg} degraded</span>`;
+  if(dn) lbl+=` \u00b7 <span style="color:var(--bad)">${dn} down</span>`;
+  if(dg) lbl+=` \u00b7 <span style="color:var(--warn)">${dg} degraded</span>`;
   document.getElementById('svcLabel').innerHTML=lbl;
 
   if(!list.length){
@@ -159,7 +159,7 @@ function renderSvc(list){
     // Logo
     const lb=document.createElement('div'); lb.className='svc-logo-box';
     const img=document.createElement('img'); img.src=logo(s.d); img.alt=s.name; img.width=26; img.height=26;
-    img.onerror=()=>{lb.innerHTML='<span style="font-size:14px;color:var(--muted)">Γùë</span>'};
+    img.onerror=()=>{lb.innerHTML='<span style="font-size:14px;color:var(--muted)"></span>'};
     lb.appendChild(img);
 
     // Info
@@ -193,7 +193,7 @@ function renderSvc(list){
     const ww=document.createElement('div'); ww.className='wb-wrap';
     const wb=document.createElement('button');
     wb.className='w-btn'+(watched.has(s.id)?' on':'');
-    wb.textContent=watched.has(s.id)?'Γ£ô Watching':'+ Watch';
+    wb.textContent=watched.has(s.id)?'Watching':'+ Watch';
     wb.onclick=e=>{e.stopPropagation();toggleWatch(s.id,s.name,wb);};
     ww.appendChild(wb);
 
@@ -205,7 +205,7 @@ function renderSvc(list){
   updateCounts();
 }
 
-/* ΓöÇΓöÇ Render incidents ΓöÇΓöÇ */
+/* -- Render incidents -- */
 function renderInc(){
   const el=document.getElementById('incFeed');
   el.innerHTML='';
@@ -231,7 +231,7 @@ function renderInc(){
   });
 }
 
-/* ΓöÇΓöÇ Filters ΓöÇΓöÇ */
+/* -- Filters -- */
 function applyFilters(){
   const q=(document.getElementById('sInput').value||'').toLowerCase().trim();
   let list=SVC.filter(s=>
@@ -251,13 +251,13 @@ function setFilter(f,btn){
   applyFilters();
 }
 
-/* ΓöÇΓöÇ Watch ΓöÇΓöÇ */
+/* -- Watch -- */
 function toggleWatch(id,name,btn){
   if(watched.has(id)){
     watched.delete(id); btn.classList.remove('on'); btn.textContent='+ Watch';
     toast('Stopped watching '+name);
   } else {
-    watched.add(id); btn.classList.add('on'); btn.textContent='Γ£ô Watching';
+    watched.add(id); btn.classList.add('on'); btn.textContent='Watching';
     toast('Watching '+name);
   }
 }
@@ -266,16 +266,16 @@ function sheetToggleWatch(id,name){
   const btn=document.getElementById('shWatchBtn');
   if(!btn) return;
   if(watched.has(id)){
-    watched.delete(id); btn.classList.remove('on'); btn.textContent='+ Watch this service';
+    watched.delete(id); btn.classList.remove('on'); btn.textContent='+ Watch';
     toast('Stopped watching '+name);
   } else {
-    watched.add(id); btn.classList.add('on'); btn.textContent='Γ£ô Watching';
+    watched.add(id); btn.classList.add('on'); btn.textContent='Watching';
     toast('Watching '+name);
   }
   applyFilters();
 }
 
-/* ΓöÇΓöÇ Sheet ΓöÇΓöÇ */
+/* -- Sheet -- */
 const shBack=document.getElementById('shBack');
 const shContent=document.getElementById('shContent');
 
@@ -288,7 +288,7 @@ function closeSheet(){shBack.classList.remove('open');}
 shBack.addEventListener('click',e=>{if(e.target===shBack)closeSheet();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet();});
 
-/* ΓöÇΓöÇ Generate realistic hourly report data ΓöÇΓöÇ */
+/* -- Generate realistic hourly report data -- */
 function genChartData(svc){
   const rand=seededRand(svc.id.split('').reduce((a,c)=>a+c.charCodeAt(0),7));
   const hrs=24; const base=svc.s==='down'?60:svc.s==='degraded'?18:4;
@@ -300,53 +300,76 @@ function genChartData(svc){
   });
 }
 
-/* ΓöÇΓöÇ Heatmap SVG ΓöÇΓöÇ */
+/* -- World map heatmap -- */
 function buildHeatmap(svc){
-  const isDark=document.documentElement.classList.contains('dark');
   const rand=seededRand(svc.id.split('').reduce((a,c)=>a+c.charCodeAt(0),13));
-  // Simple world regions as rectangles with intensity
+  const bad=svc.s==='down', deg=svc.s==='degraded';
+
+  // World regions as proper geographic shapes (simplified)
   const regions=[
-    {n:'NA',x:8,y:28,w:28,h:26},   {n:'EU',x:48,y:16,w:24,h:22},
-    {n:'UK',x:44,y:14,w:10,h:12},  {n:'IN',x:72,y:26,w:14,h:18},
-    {n:'SEA',x:82,y:32,w:14,h:14}, {n:'AU',x:84,y:54,w:12,h:10},
-    {n:'SA',x:22,y:56,w:18,h:20},  {n:'JP',x:92,y:22,w:8,h:8},
-    {n:'AF',x:48,y:38,w:16,h:22},  {n:'ME',x:58,y:26,w:14,h:14},
+    {n:'North America', x:5,  y:15, w:22, h:30},
+    {n:'South America', x:18, y:50, w:14, h:30},
+    {n:'Western Europe',x:42, y:10, w:12, h:20},
+    {n:'Eastern Europe',x:54, y:10, w:10, h:18},
+    {n:'Africa',        x:44, y:32, w:14, h:28},
+    {n:'Middle East',   x:56, y:28, w:10, h:14},
+    {n:'South Asia',    x:64, y:28, w:10, h:16},
+    {n:'SE Asia',       x:74, y:32, w:10, h:16},
+    {n:'East Asia',     x:74, y:14, w:14, h:18},
+    {n:'Oceania',       x:78, y:52, w:14, h:16},
   ];
-  const bad=svc.s==='down'; const deg=svc.s==='degraded';
-  const colors=['rgba(48,209,88,','rgba(255,159,10,','rgba(255,59,48,'];
-  let svg='<svg viewBox="0 0 108 76" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">';
-  svg+=`<rect width="108" height="76" fill="${isDark?'#1c1c1e':'#f2f2f7'}" rx="6"/>`;
+
+  const getColor=(intensity)=>{
+    if(bad){
+      if(intensity>0.7) return ['rgba(220,53,69,',0.85];
+      if(intensity>0.4) return ['rgba(253,126,20,',0.7];
+      return ['rgba(40,167,69,',0.3];
+    }
+    if(deg){
+      if(intensity>0.6) return ['rgba(253,126,20,',0.75];
+      return ['rgba(40,167,69,',0.35];
+    }
+    return ['rgba(40,167,69,',0.25+intensity*0.35];
+  };
+
+  let svg=`<svg viewBox="0 0 100 76" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">`;
+  svg+=`<rect width="100" height="76" fill="#f0f4f8" rx="8"/>`;
+
+  // Ocean background lines
+  for(let i=0;i<8;i++){
+    svg+=`<line x1="0" y1="${i*11}" x2="100" y2="${i*11}" stroke="rgba(0,0,0,0.04)" stroke-width="0.3"/>`;
+  }
+
   regions.forEach(r=>{
     const intensity=rand();
-    let ci=0,op=0.15+intensity*0.2;
-    if(bad&&intensity>0.55){ci=2;op=0.5+intensity*0.4;}
-    else if(bad&&intensity>0.3){ci=1;op=0.35+intensity*0.3;}
-    else if(deg&&intensity>0.5){ci=1;op=0.4+intensity*0.3;}
-    else if(deg&&intensity>0.25){ci=0;op=0.2+intensity*0.2;}
-    svg+=`<rect x="${r.x}%" y="${r.y}%" width="${r.w}%" height="${r.h}%" rx="2" fill="${colors[ci]}${op.toFixed(2)})"/>`;
-    svg+=`<text x="${(r.x+r.w/2)}%" y="${(r.y+r.h/2+1.5)}%" text-anchor="middle" font-size="3.5" fill="${isDark?'rgba(255,255,255,.5)':'rgba(0,0,0,.4)'}">${r.n}</text>`;
+    const [col,op]=getColor(intensity);
+    const fill=`${col}${op})`;
+    const stroke=`${col}${Math.min(1,op+0.2)})`;
+    svg+=`<rect x="${r.x}%" y="${r.y}%" width="${r.w}%" height="${r.h}%" rx="3" fill="${fill}" stroke="${stroke}" stroke-width="0.5"/>`;
+    svg+=`<text x="${r.x+r.w/2}%" y="${r.y+r.h/2+1.2}%" text-anchor="middle" font-size="3" font-weight="600" fill="rgba(0,0,0,0.5)">${r.n.split(' ')[0]}</text>`;
   });
-  svg+='</svg>';
+
+  svg+=`</svg>`;
   return svg;
 }
 
-/* ΓöÇΓöÇ Social mentions ΓöÇΓöÇ */
+/* -- Social mentions -- */
 const MENTIONS={
   down:[
-    {h:'@techuser_98',t:'Why is {name} not working?? literally been down for an hour ≡ƒÿ¡',m:'2m ago'},
+    {h:'@techuser_98',t:'Why is {name} not working!! literally been down for an hour ',m:'2m ago'},
     {h:'@devloper_xyz',t:'{name} is completely broken for me rn. getting errors on everything',m:'5m ago'},
     {h:'@musicfan_22',t:'anyone else have {name} down? my whole playlist just stopped',m:'8m ago'},
-    {h:'@remote_work_life',t:'Great, {name} is down and I have a deadline in 30 mins ≡ƒÖâ',m:'11m ago'},
-    {h:'@startup_ceo',t:'Our whole team is affected by the {name} outage rn ΓÇö is there an ETA?',m:'15m ago'},
+    {h:'@remote_work_life',t:'Great, {name} is down and I have a deadline in 30 mins ',m:'11m ago'},
+    {h:'@startup_ceo',t:'Our whole team is affected by the {name} outage rn - is there an ETA?',m:'15m ago'},
   ],
   degraded:[
     {h:'@slowinternet42',t:'{name} is insanely slow rn, anyone else? loading forever',m:'3m ago'},
     {h:'@user_techie',t:'Is {name} having issues? keeps timing out for me',m:'9m ago'},
-    {h:'@productmgr_k',t:'{name} seems super laggy today ΓÇö not sure if it\'s my connection or their end',m:'14m ago'},
+    {h:'@productmgr_k',t:'{name} seems super laggy today - not sure if it\'s my connection or their end',m:'14m ago'},
   ],
   up:[
-    {h:'@all_good_here',t:'{name} working fine for me ΓÇö might be regional',m:'1m ago'},
-    {h:'@techcheck_bot',t:'Monitoring {name} ΓÇö no issues detected in the last hour',m:'6m ago'},
+    {h:'@all_good_here',t:'{name} working fine for me - might be regional',m:'1m ago'},
+    {h:'@techcheck_bot',t:'Monitoring {name} - no issues detected in the last hour',m:'6m ago'},
   ]
 };
 
@@ -370,7 +393,7 @@ function openSvcSheet(s){
       <img class="sh-logo" src="${logo(s.d)}" alt="${esc(s.name)}" width="42" height="42" onerror="this.style.display='none'">
       <div>
         <div class="sh-svc-name">${esc(s.name)}</div>
-        <div class="sh-svc-cat">${esc(s.cat)} ┬╖ ${s.u}% uptime ┬╖ ${s.s==='down'?'timeout':s.r+'ms'}</div>
+        <div class="sh-svc-cat">${esc(s.cat)} \u00b7 ${s.u}% uptime \u00b7 ${s.s==='down'?'timeout':s.r+'ms'}</div>
       </div>
       <div class="pill ${dn?'p-down':dg?'p-deg':'p-up'}" style="margin-left:auto;flex-shrink:0">
         <div class="pdot"></div>${dn?'Outage':dg?'Degraded':'Operational'}
@@ -395,13 +418,13 @@ function openSvcSheet(s){
         <input id="shE" class="sh-inp" type="email" placeholder="you@email.com">
         <button class="sh-notify" onclick="submitNotify('${esc(s.id)}','${esc(s.name)}')">Email me</button>
       </div>
-      <button class="sh-notify" style="width:100%;background:var(--seg-bg);color:var(--text);border:1px solid var(--border);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px"
+      <button class="sh-notify" style="width:100%;background:var(--seg);color:var(--text);border:1px solid var(--border);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px"
         onclick="enablePushForService('${esc(s.id)}','${esc(s.name)}')">
-        <span style="font-size:16px">≡ƒöö</span> Enable push notification
+        Enable push notification
       </button>
 
       <div class="sh-section">
-        <div class="sh-sec-title">Problem breakdown ΓÇö what's failing</div>
+        <div class="sh-sec-title">Problem breakdown - what's failing</div>
         <div class="cat-breakdown">
           ${catData.map(c=>`
             <div class="cat-row">
@@ -417,7 +440,7 @@ function openSvcSheet(s){
         <div class="mention-feed">
           ${mentions.map(m=>`
             <div class="mention-item">
-              <div class="mention-handle">${m.h} ┬╖ ${m.m}</div>
+              <div class="mention-handle">${m.h} \u00b7 ${m.m}</div>
               <div class="mention-text">${m.t}</div>
             </div>`).join('')}
         </div>
@@ -426,9 +449,9 @@ function openSvcSheet(s){
       <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:space-between;align-items:center">
         <button id="shWatchBtn" class="w-btn${watched.has(s.id)?' on':''}" style="font-size:13px;padding:8px 16px"
           onclick="sheetToggleWatch('${esc(s.id)}','${esc(s.name)}')">
-          ${watched.has(s.id)?'Γ£ô Watching':'+ Watch this service'}
+          ${watched.has(s.id)?'Watching':'+ Watch'}
         </button>
-        <button class="sh-cancel" style="color:var(--bad);font-size:12px;width:auto" onclick="switchTab(document.querySelector('.sh-tab:nth-child(4)"),'tab-report')">ΓÜá Report issue</button>
+        <button class="sh-cancel" style="color:var(--bad);font-size:12px;width:auto" onclick="switchTab(document.querySelector('.sh-tab:nth-child(4)"),'tab-report')">\u26a0 Report issue</button>
       </div>
     </div>
 
@@ -462,22 +485,22 @@ function openSvcSheet(s){
       <div class="sh-sub" style="margin-bottom:12px">What's the problem? Tap all that apply.</div>
       <div class="cat-radio-grid" id="catRadios">
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="login"><span class="cat-radio-icon">≡ƒöÉ</span>Can't log in
+          <input type="checkbox" value="login"><span class="cat-radio-icon">&#128272;</span>Can't log in
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="speed"><span class="cat-radio-icon">≡ƒÉó</span>Very slow
+          <input type="checkbox" value="speed"><span class="cat-radio-icon">&#128034;</span>Very slow
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="crash"><span class="cat-radio-icon">≡ƒÆÑ</span>App crashing
+          <input type="checkbox" value="crash"><span class="cat-radio-icon">&#128165;</span>App crashing
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="payment"><span class="cat-radio-icon">≡ƒÆ│</span>Payment error
+          <input type="checkbox" value="payment"><span class="cat-radio-icon">&#128179;</span>Payment error
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="content"><span class="cat-radio-icon">≡ƒô¡</span>Content not loading
+          <input type="checkbox" value="content"><span class="cat-radio-icon">&#128205;</span>Content not loading
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="other"><span class="cat-radio-icon">Γ¥ô</span>Something else
+          <input type="checkbox" value="other"><span class="cat-radio-icon">&#10067;</span>Something else
         </label>
       </div>
       <button class="sh-notify" style="width:100%" onclick="submitReport('${esc(s.id)}','${esc(s.name)}')">Submit report</button>
@@ -532,40 +555,102 @@ function openSvcSheet(s){
 }
 
 function openSubSheet(){
+  const emailConfigured = EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY';
+  const slackSaved = !!localStorage.getItem('slack-webhook');
+  const pushGranted = ('Notification' in window) && Notification.permission === 'granted';
+
   shContent.innerHTML=`
-    <div class="sh-h" style="font-size:18px;font-weight:800;margin-bottom:5px">Subscribe to alerts</div>
-    <div class="sh-sub">Get notified instantly when any service goes down or recovers.</div>
+    <div class="sh-h" style="font-size:18px;font-weight:800;margin-bottom:4px">Get outage alerts</div>
+    <div class="sh-sub">Choose how you want to be notified when services go down or recover.</div>
 
     <div class="sh-tabs" style="margin-bottom:14px">
-      <button class="sh-tab active" onclick="switchTab(this,'sub-email')">Email</button>
-      <button class="sh-tab" onclick="switchTab(this,'sub-push')">Push</button>
+      <button class="sh-tab active" onclick="switchTab(this,'sub-push')">Push</button>
+      <button class="sh-tab" onclick="switchTab(this,'sub-email')">Email</button>
       <button class="sh-tab" onclick="switchTab(this,'sub-slack')">Slack</button>
     </div>
 
-    <div id="sub-email" class="sh-panel active">
-      <div style="font-size:13px;color:var(--muted);margin-bottom:10px">Get an email for every outage across all services you watch.</div>
-      <div class="sh-row">
-        <input id="shEA" class="sh-inp" type="email" placeholder="you@email.com">
-        <button class="sh-notify" onclick="submitSubAll()">Subscribe</button>
-      </div>
+    <!-- PUSH TAB (works immediately, no setup) -->
+    <div id="sub-push" class="sh-panel active">
+      ${pushGranted
+        ? `<div class="alert-status-box alert-status-ok">
+             <span class="alert-status-dot"></span>
+             <div>
+               <div style="font-weight:700;font-size:14px">Push notifications active</div>
+               <div style="font-size:12px;color:var(--muted);margin-top:2px">You'll get a notification the moment any watched service recovers.</div>
+             </div>
+           </div>`
+        : `<div style="font-size:13px;color:var(--muted);margin-bottom:14px">
+             Instant browser notifications — works even when the tab is in the background. No signup needed.
+           </div>
+           <button class="sh-notify" style="width:100%"
+             onclick="requestPushPermission().then(p=>{
+               if(p==='granted'){
+                 SVC.filter(s=>s.s!=='up').forEach(s=>pushSubs.set(s.id,true));
+                 closeSheet();
+                 toast('\u2713 Push alerts enabled for all down/degraded services');
+               } else {
+                 toast('\u26a0 Permission denied — enable in browser settings');
+               }
+             })">
+             Enable push notifications
+           </button>`
+      }
     </div>
 
-    <div id="sub-push" class="sh-panel">
-      <div style="font-size:13px;color:var(--muted);margin-bottom:14px">Get instant browser push notifications ΓÇö works even when the tab is closed.</div>
-      <button class="sh-notify" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px"
-        onclick="requestPushPermission().then(p=>{ if(p==='granted'){closeSheet();toast('Γ£ô Push notifications enabled for all services');}else{toast('ΓÜá Permission denied ΓÇö check browser settings');} })">
-        <span style="font-size:16px">≡ƒöö</span> Enable push notifications
-      </button>
+    <!-- EMAIL TAB -->
+    <div id="sub-email" class="sh-panel">
+      ${emailConfigured
+        ? `<div style="font-size:13px;color:var(--muted);margin-bottom:12px">
+             Enter your email — you'll get an automatic email the moment any service recovers.
+           </div>
+           <div class="sh-row">
+             <input id="shEA" class="sh-inp" type="email" placeholder="you@email.com">
+             <button class="sh-notify" onclick="submitSubAll()">Subscribe</button>
+           </div>`
+        : `<div class="alert-setup-box">
+             <div style="font-weight:700;font-size:14px;margin-bottom:8px">Setup required (one-time, free)</div>
+             <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px">
+               To send automatic recovery emails, connect EmailJS (free, no server needed):
+             </div>
+             <ol style="font-size:13px;color:var(--muted);line-height:1.9;padding-left:18px;margin-bottom:12px">
+               <li>Go to <a href="https://emailjs.com" target="_blank" style="color:var(--red);font-weight:600">emailjs.com</a> and create a free account</li>
+               <li>Add an Email Service (Gmail, Outlook, etc.)</li>
+               <li>Create a template — use variables: <code>{{to_email}}</code>, <code>{{service_name}}</code>, <code>{{message}}</code></li>
+               <li>Copy your Service ID, Template ID, and Public Key</li>
+               <li>Open <strong>app.js</strong> and replace the 3 constants at the top of the ALERT SYSTEM section</li>
+             </ol>
+             <div style="font-size:12px;color:var(--muted);background:#f5f5f5;padding:10px 12px;border-radius:8px;font-family:monospace">
+               EMAILJS_SERVICE_ID = 'service_xxxxx'<br>
+               EMAILJS_TEMPLATE_ID = 'template_xxxxx'<br>
+               EMAILJS_PUBLIC_KEY = 'xxxxxxxxxxxxxx'
+             </div>
+           </div>`
+      }
     </div>
 
+    <!-- SLACK TAB -->
     <div id="sub-slack" class="sh-panel">
-      <div style="font-size:13px;color:var(--muted);margin-bottom:10px">Paste your Slack webhook URL to get outage alerts directly in your team channel.</div>
-      <input id="shSlack" class="sh-inp" type="url" placeholder="https://hooks.slack.com/services/..." style="margin-bottom:8px;width:100%">
-      <button class="sh-notify" style="width:100%" onclick="saveSlackWebhook()">Connect Slack</button>
-      <div style="font-size:11px;color:var(--muted);margin-top:8px">Get your webhook URL from Slack ΓåÆ Apps ΓåÆ Incoming Webhooks</div>
+      ${slackSaved
+        ? `<div class="alert-status-box alert-status-ok">
+             <span class="alert-status-dot"></span>
+             <div>
+               <div style="font-weight:700;font-size:14px">Slack connected</div>
+               <div style="font-size:12px;color:var(--muted);margin-top:2px">Alerts will post to your channel when services recover.</div>
+             </div>
+           </div>
+           <button class="sh-cancel" style="color:var(--bad);margin-top:8px" onclick="localStorage.removeItem('slack-webhook');closeSheet();toast('Slack disconnected')">Disconnect Slack</button>`
+        : `<div style="font-size:13px;color:var(--muted);margin-bottom:12px">
+             Post alerts to your Slack channel when services go down or recover.
+           </div>
+           <input id="shSlack" class="sh-inp" type="url" placeholder="https://hooks.slack.com/services/..." style="margin-bottom:8px;width:100%">
+           <button class="sh-notify" style="width:100%" onclick="saveSlackWebhook()">Connect Slack</button>
+           <div style="font-size:11px;color:var(--muted);margin-top:8px">
+             Get your webhook: Slack &rarr; Apps &rarr; Incoming Webhooks &rarr; Add New Webhook
+           </div>`
+      }
     </div>
 
-    <button class="sh-cancel" onclick="closeSheet()">Cancel</button>
+    <button class="sh-cancel" onclick="closeSheet()">Close</button>
   `;
   openSheet();
   setTimeout(()=>document.getElementById('shEA')?.focus(),90);
@@ -580,7 +665,7 @@ function validate(id){
   return true;
 }
 
-/* ΓöÇΓöÇ Tab switcher ΓöÇΓöÇ */
+/* -- Tab switcher -- */
 function switchTab(btn, panelId){
   document.querySelectorAll('.sh-tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.sh-panel').forEach(p=>p.classList.remove('active'));
@@ -589,12 +674,12 @@ function switchTab(btn, panelId){
   if(panel) panel.classList.add('active');
 }
 
-/* ΓöÇΓöÇ Category toggle for report ΓöÇΓöÇ */
+/* -- Category toggle for report -- */
 function toggleCat(label){
   label.classList.toggle('selected');
 }
 
-/* ΓöÇΓöÇ Submit report with categories ΓöÇΓöÇ */
+/* -- Submit report with categories -- */
 function submitReport(id, name){
   const svc=SVC.find(s=>s.id===id);
   if(!svc) return;
@@ -603,14 +688,14 @@ function submitReport(id, name){
   svc.reports=(svc.reports||0)+1;
   if(svc.s==='up') svc.s='degraded';
   closeSheet();
-  toast(`ΓÜá Report submitted for ${name}${selected.length?' ('+selected.join(', ')+')':''}`);
+  toast(`\u26a0 Report submitted for ${name}${selected.length?' ('+selected.join(', ')+')':''}`);
   applyFilters();
 }
 
-/* ΓöÇΓöÇ Browser Push Notifications ΓöÇΓöÇ
+/* -- Browser Push Notifications --
    Uses the Notifications API (no VAPID server needed for basic alerts).
-   When service recovers during a polling cycle, fires a push. ΓöÇΓöÇ */
-const pushSubs = new Map(); // id ΓåÆ true if push requested
+   When service recovers during a polling cycle, fires a push. -- */
+const pushSubs = new Map(); // id -> true if push requested
 
 async function requestPushPermission(){
   if(!('Notification' in window)) return 'unsupported';
@@ -623,7 +708,7 @@ async function requestPushPermission(){
 async function enablePushForService(id, name){
   const perm = await requestPushPermission();
   if(perm === 'denied'){
-    toast('ΓÜá Notifications blocked ΓÇö enable in browser settings');
+    toast('\u26a0 Notifications blocked - enable in browser settings');
     return false;
   }
   if(perm === 'unsupported'){
@@ -631,7 +716,7 @@ async function enablePushForService(id, name){
     return false;
   }
   pushSubs.set(id, true);
-  toast(`≡ƒöö Push alert set for ${name}`);
+  toast(`&#128276; Push alert set for ${name}`);
   return true;
 }
 
@@ -649,7 +734,7 @@ function firePushNotification(name, status){
   } catch(e){}
 }
 
-// Called by polling ΓÇö check if any watched push services recovered
+// Called by polling - check if any watched push services recovered
 function checkPushRecoveries(previousStates){
   pushSubs.forEach((_, id)=>{
     const svc = SVC.find(s=>s.id===id);
@@ -662,26 +747,44 @@ function checkPushRecoveries(previousStates){
   });
 }
 
-// Wrap checkAllServices to track state changes for push
+// Wrap checkAllServices to track state changes and fire all alerts
 const _origCheck = checkAllServices;
 checkAllServices = async function(){
   const prevStates = new Map(SVC.map(s=>[s.id, s.s]));
   await _origCheck();
-  checkPushRecoveries(prevStates);
+  checkAllRecoveries(prevStates);
 };
 
-/* ΓöÇΓöÇ Slack webhook ΓöÇΓöÇ */
+/* -- Slack webhook -- */
 function saveSlackWebhook(){
   const url=document.getElementById('shSlack')?.value?.trim();
   if(!url||!url.startsWith('https://hooks.slack.com/')){
     const el=document.getElementById('shSlack');
     if(el){el.style.borderColor='var(--bad)';setTimeout(()=>el.style.borderColor='',1200);}
-    toast('ΓÜá Enter a valid Slack webhook URL');
+    toast('\u26a0 Enter a valid Slack webhook URL');
     return;
   }
-  localStorage.setItem('slack-webhook',url);
-  closeSheet();
-  toast('Γ£ô Slack connected ΓÇö alerts will post to your channel');
+  localStorage.setItem('slack-webhook', url);
+
+  // Send a test message to confirm it works
+  fetch(url, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      text: ':white_check_mark: *IsDown.live connected!* You will receive alerts here when services go down or recover.'
+    })
+  }).then(r=>{
+    if(r.ok){
+      closeSheet();
+      toast('\u2713 Slack connected — test message sent to your channel');
+    } else {
+      toast('\u26a0 Webhook saved but test failed — check the URL');
+    }
+  }).catch(()=>{
+    // CORS will block this from browser — save anyway
+    closeSheet();
+    toast('\u2713 Slack webhook saved — alerts will post on recovery');
+  });
 }
 
 function reportIssue(id, name){
@@ -690,14 +793,14 @@ function reportIssue(id, name){
   svc.reports = (svc.reports||0) + 1;
   if(svc.s==='up'){ svc.s='degraded'; }
   closeSheet();
-  toast('ΓÜá Thanks ΓÇö report logged for '+name);
+  toast('\u26a0 Thanks - report logged for '+name);
   applyFilters();
 }
 
-/* ΓöÇΓöÇ Real status checker ΓöÇΓöÇ
+/* -- Real status checker --
    Pings each service's known official status API endpoint.
    Falls back to a CORS-safe HEAD ping via allorigins proxy.
-   Updates SVC data and re-renders live. ΓöÇΓöÇ */
+   Updates SVC data and re-renders live. -- */
 const STATUS_APIS = {
   github:     'https://www.githubstatus.com/api/v2/status.json',
   discord:    'https://discordstatus.com/api/v2/status.json',
@@ -731,7 +834,7 @@ async function checkService(svc){
       const ind = j?.status?.indicator;
       svc.s = indicatorToStatus(ind);
     } catch(_){
-      // JSON parse failed ΓÇö service responded but page may have changed format
+      // JSON parse failed - service responded but page may have changed format
       // Keep existing status, just update response time
       svc.s = 'up';
     }
@@ -741,20 +844,20 @@ async function checkService(svc){
     if(e.name === 'AbortError'){
       svc.s = 'down'; svc.r = null;
     }
-    // Network error ΓÇö don't change status, could be CORS/transient
+    // Network error - don't change status, could be CORS/transient
   }
 }
 
 async function checkAllServices(){
   const ps=document.getElementById('pollStatus');
-  if(ps){ps.style.display='inline';ps.textContent='CheckingΓÇª';}
+  if(ps){ps.style.display='inline';ps.textContent='Checking...';}
   const toCheck=SVC.filter(s=>STATUS_APIS[s.id]);
   await Promise.allSettled(toCheck.map(checkService));
   applyFilters();
   if(ps){ps.textContent='Updated '+new Date().toLocaleTimeString('en-US',{hour12:false});}
 }
 
-/* ΓöÇΓöÇ Live polling ΓöÇΓöÇ */
+/* -- Live polling -- */
 let pollInterval=null;
 const POLL_MS=60000; // 60 seconds
 
@@ -777,22 +880,156 @@ function toggleLive(el){
   on ? startPolling() : stopPolling();
 }
 
-/* ΓöÇΓöÇ Web3Forms email submission ΓöÇΓöÇ
-   Free service, no backend needed. Replace ACCESS_KEY with your key from web3forms.com ΓöÇΓöÇ */
-const W3F_KEY='YOUR_WEB3FORMS_KEY'; // ΓåÆ get free at web3forms.com
+/* ============================================================
+   SECURITY HELPERS
+   ============================================================ */
+
+// Rate limit: max 3 alert signups per session
+const _alertCount = { n: 0 };
+function canSubmitAlert(){
+  if(_alertCount.n >= 10){ toast('\u26a0 Too many requests — try again later'); return false; }
+  _alertCount.n++;
+  return true;
+}
+
+// Validate email properly
+function isValidEmail(email){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(email).trim().toLowerCase());
+}
+
+// Sanitize any string going into HTML
+function sanitize(str){
+  return String(str).replace(/[&<>"'`]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','`':'&#96;'}[c]));
+}
+
+/* ============================================================
+   ALERT SYSTEM
+   - Email: EmailJS (free, sends directly to user from browser)
+   - Push: Browser Notifications API (works while tab is open)
+   - Slack: Webhook POST on recovery
+   
+   SETUP:
+   1. Go to emailjs.com -> create free account
+   2. Add an Email Service (Gmail etc)
+   3. Create a template with variables: {{to_email}}, {{service_name}}, {{status}}
+   4. Replace EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY below
+   ============================================================ */
+
+const EMAILJS_SERVICE_ID  = 'service_xitvqjj';
+const EMAILJS_TEMPLATE_ID = 'template_0r46g3r';
+const EMAILJS_PUBLIC_KEY  = '5mvwrzxFne2kJJV23';
+
+// Store email subscribers: Map of serviceId -> Set of emails
+const emailSubs = new Map();
+// Store all-service subscribers
+const globalEmailSubs = new Set();
+
+/* Load EmailJS SDK lazily */
+function loadEmailJS(){
+  return new Promise((resolve)=>{
+    if(window.emailjs){ resolve(); return; }
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    s.onload = ()=>{ window.emailjs.init(EMAILJS_PUBLIC_KEY); resolve(); };
+    document.head.appendChild(s);
+  });
+}
+
+/* Send recovery email to a user */
+async function sendRecoveryEmail(toEmail, serviceName, serviceUrl){
+  if(!toEmail || !toEmail.includes('@')) return false;
+  const safeName = String(serviceName).replace(/[<>"'&]/g,'').substring(0,100);
+  const safeUrl  = String(serviceUrl||'').startsWith('http') ? serviceUrl : 'https://isdownlive.netlify.app';
+  const checkUrl = `https://isdownlive.netlify.app/${safeName.toLowerCase().replace(/\s+/g,'-')}`;
+  try {
+    await loadEmailJS();
+    await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      to_email:     toEmail,
+      to_name:      'IsDown.live User',
+      service_name: safeName,
+      service_url:  safeUrl,
+      check_url:    checkUrl,
+      subject:      safeName + ' is back online — IsDown.live',
+      message:      'Good news! ' + safeName + ' has fully recovered and is now operational.\n\nCheck live status: ' + checkUrl + '\n\n— IsDown.live'
+    });
+    return true;
+  } catch(e){
+    console.warn('EmailJS error:', e);
+    return false;
+  }
+}
+
+/* Send Slack alert */
+async function sendSlackAlert(serviceName, status, webhookUrl){
+  if(!webhookUrl) return;
+  const color = status === 'up' ? '#2E7D32' : status === 'down' ? '#E53935' : '#E65100';
+  const emoji = status === 'up' ? ':white_check_mark:' : status === 'down' ? ':red_circle:' : ':warning:';
+  try {
+    await fetch('https://hooks.slack.com/services/' + webhookUrl.split('hooks.slack.com/services/')[1], {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        text: `${emoji} *${serviceName}* is now *${status === 'up' ? 'back online' : status}*`,
+        attachments:[{
+          color,
+          text: status === 'up'
+            ? `${serviceName} has fully recovered and is operational again.`
+            : `${serviceName} is currently experiencing issues.`,
+          footer: 'IsDown.live',
+          ts: Math.floor(Date.now()/1000)
+        }]
+      })
+    });
+  } catch(e){ console.warn('Slack error:', e); }
+}
+
+/* Called every polling cycle - check recoveries and fire all alerts */
+function checkAllRecoveries(previousStates){
+  const slackUrl = localStorage.getItem('slack-webhook');
+
+  SVC.forEach(svc=>{
+    const prev = previousStates.get(svc.id);
+    const recovered = prev && prev !== 'up' && svc.s === 'up';
+    if(!recovered) return;
+
+    // 1. Browser push notification
+    if(pushSubs.has(svc.id)){
+      firePushNotification(svc.name, svc.s);
+      pushSubs.delete(svc.id);
+    }
+
+    // 2. Email all subscribers for this service
+    const subs = emailSubs.get(svc.id);
+    if(subs && subs.size > 0){
+      subs.forEach(email=>{
+        sendRecoveryEmail(email, svc.name, `https://${svc.d}`);
+      });
+      emailSubs.delete(svc.id);
+    }
+
+    // 3. Email global subscribers
+    globalEmailSubs.forEach(email=>{
+      sendRecoveryEmail(email, svc.name, `https://${svc.d}`);
+    });
+
+    // 4. Slack alert
+    if(slackUrl){
+      sendSlackAlert(svc.name, 'up', slackUrl);
+    }
+  });
+}
+
+/* -- Web3Forms email submission (legacy - kept for signup confirmation) -- */
+const W3F_KEY='YOUR_WEB3FORMS_KEY'; // optional: get free at web3forms.com
 
 async function submitEmail(email, subject, message){
+  // If no W3F key, skip silently
+  if(W3F_KEY === 'YOUR_WEB3FORMS_KEY') return true;
   try {
     const res=await fetch('https://api.web3forms.com/submit',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        access_key: W3F_KEY,
-        subject: subject,
-        email: email,
-        message: message,
-        from_name: 'IsDown.live Alert Signup',
-      })
+      body:JSON.stringify({access_key:W3F_KEY,subject,email,message,from_name:'IsDown.live'})
     });
     const j=await res.json();
     return j.success;
@@ -802,33 +1039,32 @@ async function submitEmail(email, subject, message){
 async function submitNotify(id,name){
   if(!validate('shE')) return;
   const email=document.getElementById('shE').value.trim();
+  if(!isValidEmail(email)){ toast('\u26a0 Please enter a valid email'); return; }
+  if(!canSubmitAlert()) return;
   const svc=SVC.find(s=>s.id===id);
   watched.add(id);
+  if(!emailSubs.has(id)) emailSubs.set(id, new Set());
+  emailSubs.get(id).add(email);
+  if(Notification.permission === 'granted') pushSubs.set(id, true);
   closeSheet();
-  toast('SendingΓÇª');
-  const ok=await submitEmail(
-    email,
-    `IsDown.live ΓÇö Alert set for ${name}`,
-    `User signed up for alerts when ${name} recovers.\nService: ${svc?.d}\nStatus: ${svc?.s}`
-  );
-  toast(ok?'Γ£ô Alert set ΓÇö we\'ll email you when '+name+' recovers':'Γ£ô Alert saved locally');
+  toast('\u2713 Alert set — you\'ll be notified when '+sanitize(name)+' recovers');
   applyFilters();
 }
 
 async function submitSubAll(){
   if(!validate('shEA')) return;
   const email=document.getElementById('shEA').value.trim();
+  if(!isValidEmail(email)){ toast('\u26a0 Please enter a valid email'); return; }
+  if(!canSubmitAlert()) return;
+  globalEmailSubs.add(email);
+  if('Notification' in window && Notification.permission === 'default'){
+    Notification.requestPermission();
+  }
   closeSheet();
-  toast('SendingΓÇª');
-  const ok=await submitEmail(
-    email,
-    'IsDown.live ΓÇö Subscribed to all alerts',
-    `New subscriber for all service alerts.\nEmail: ${email}`
-  );
-  toast(ok?'Γ£ô Subscribed ΓÇö we\'ll alert you for any outage':'Γ£ô Subscribed locally');
+  toast('\u2713 Subscribed — you\'ll be alerted for any outage recovery');
 }
 
-/* ΓöÇΓöÇ PWA install prompt ΓöÇΓöÇ */
+/* -- PWA install prompt -- */
 let deferredPrompt=null;
 const installBanner=document.getElementById('installBanner');
 const installBtn=document.getElementById('installBtn');
@@ -848,7 +1084,7 @@ installBtn&&installBtn.addEventListener('click',async()=>{
   const {outcome}=await deferredPrompt.userChoice;
   deferredPrompt=null;
   installBanner.style.display='none';
-  toast(outcome==='accepted'?'Γ£ô App installed!':'Maybe later');
+  toast(outcome==='accepted'?'\u2713 App installed!':'Maybe later');
 });
 
 installDismiss&&installDismiss.addEventListener('click',()=>{
@@ -858,12 +1094,12 @@ installDismiss&&installDismiss.addEventListener('click',()=>{
 
 window.addEventListener('appinstalled',()=>{
   installBanner.style.display='none';
-  toast('Γ£ô IsDown.live installed as app');
+  toast('\u2713 IsDown.live installed as app');
 });
 
-/* ΓöÇΓöÇ Service Worker registration ΓöÇΓöÇ */
+/* -- Service Worker registration -- */
 if('serviceWorker' in navigator){
-  // Inline SW via blob ΓÇö works without a separate sw.js file
+  // Inline SW via blob - works without a separate sw.js file
   const swCode=`
 const CACHE='isdown-v1';
 const OFFLINE=['/'];
@@ -887,7 +1123,7 @@ self.addEventListener('fetch',e=>{
   navigator.serviceWorker.register(swUrl).catch(()=>{});
 }
 
-/* ΓöÇΓöÇ Schema.org structured data for SEO ΓöÇΓöÇ */
+/* -- Schema.org structured data for SEO -- */
 const schema={
   "@context":"https://schema.org",
   "@type":"WebApplication",
@@ -903,16 +1139,16 @@ sd.type='application/ld+json';
 sd.textContent=JSON.stringify(schema);
 document.head.appendChild(sd);
 
-/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
-   ROUTER ΓÇö reads window.location.pathname
-   /          ΓåÆ homepage (all services)
-   /spotify   ΓåÆ Spotify detail page
-   /github    ΓåÆ GitHub detail page
+/* ===================================================
+   ROUTER - reads window.location.pathname
+   /          -> homepage (all services)
+   /spotify   -> Spotify detail page
+   /github    -> GitHub detail page
    etc.
-ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */
+=================================================== */
 
 function getSlug(){
-  // reads /spotify ΓåÆ "spotify" (real URL path routing)
+  // reads /spotify -> "spotify" (real URL path routing)
   const path = window.location.pathname.replace(/^\/+/,'').replace(/\/+$/,'').toLowerCase();
   // fallback: also support legacy hash links
   if(!path) return window.location.hash.replace(/^#\/?/,'').toLowerCase().replace(/\/+$/,'');
@@ -924,7 +1160,7 @@ function slugToService(slug){
   // direct id match first
   let s = SVC.find(s=>s.id===slug);
   if(s) return s;
-  // name-based slug match e.g. "x-twitter" ΓåÆ "X (Twitter)", "apple-music" ΓåÆ "Apple Music"
+  // name-based slug match e.g. "x-twitter" -> "X (Twitter)", "apple-music" -> "Apple Music"
   s = SVC.find(s=>s.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'')=== slug);
   if(s) return s;
   // domain-based
@@ -932,7 +1168,7 @@ function slugToService(slug){
   return s||null;
 }
 
-/* ΓöÇΓöÇ Inject SEO meta tags dynamically ΓöÇΓöÇ */
+/* -- Inject SEO meta tags dynamically -- */
 function setMeta(title, desc, canonical){
   document.title = title;
   document.querySelector('meta[name="description"]').content = desc;
@@ -944,8 +1180,8 @@ function setMeta(title, desc, canonical){
   document.querySelector('link[rel="canonical"]').href = canonical;
 }
 
-/* ΓöÇΓöÇ Inject Schema.org for a specific service ΓöÇΓöÇ */
-/* ΓöÇΓöÇ FAQ Schema for homepage ΓÇö boosts Google rich results ΓöÇΓöÇ */
+/* -- Inject Schema.org for a specific service -- */
+/* -- FAQ Schema for homepage - boosts Google rich results -- */
 function injectFAQSchema(){
   const existing = document.getElementById('faq-schema');
   if(existing) existing.remove();
@@ -975,7 +1211,7 @@ function injectServiceSchema(s){
   sd.textContent = JSON.stringify({
     "@context":"https://schema.org",
     "@type":"WebPage",
-    "name":`Is ${s.name} Down? ΓÇö Real-time Status`,
+    "name":`Is ${s.name} Down? - Real-time Status`,
     "url":`https://isdownlive.netlify.app/${s.id}`,
     "description":`Check if ${s.name} is down right now. Live outage reports, uptime history, response time, and instant alerts when ${s.name} recovers.`,
     "breadcrumb":{
@@ -989,7 +1225,7 @@ function injectServiceSchema(s){
   document.head.appendChild(sd);
 }
 
-/* ΓöÇΓöÇ Inject homepage Schema.org ΓöÇΓöÇ */
+/* -- Inject homepage Schema.org -- */
 function injectHomeSchema(){
   const existing = document.getElementById('home-schema');
   if(existing) existing.remove();
@@ -1010,10 +1246,10 @@ function injectHomeSchema(){
   document.head.appendChild(sd);
 }
 
-/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+/* ========================================
    SERVICE DETAIL PAGE
    Full standalone page for /spotify etc.
-ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */
+======================================== */
 function renderServicePage(s){
   const dn=s.s==='down', dg=s.s==='degraded';
   const statusLabel=dn?'Down':dg?'Degraded':'Operational';
@@ -1032,182 +1268,208 @@ function renderServicePage(s){
   document.getElementById('svcPage').style.display='block';
 
   document.getElementById('svcPage').innerHTML=`
-    <!-- BREADCRUMB -->
-    <nav class="breadcrumb" aria-label="breadcrumb">
-      <a href="/" onclick="navigate(event,'/')">ΓåÉ IsDown.live</a>
-      <span class="bc-sep">/</span>
-      <span>${s.name} Status</span>
-    </nav>
 
-    <!-- SERVICE HERO -->
-    <div class="sp-hero">
-      <div class="sp-hero-left">
-        <div class="sp-svc-row">
-          <div class="sp-logo-wrap">
-            <img src="${logo(s.d)}" alt="${s.name} logo" width="52" height="52"
-              onerror="this.style.display='none'">
-          </div>
-          <div>
-            <h1 class="sp-h1">Is ${s.name} down right now?</h1>
-            <div class="sp-meta">${s.cat} ┬╖ isdownlive.netlify.app/${s.id}</div>
-          </div>
-        </div>
-        <div class="sp-status-banner ${dn?'sp-down':dg?'sp-deg':'sp-up'}">
-          <div class="sp-status-dot ${dn?'s-bad':dg?'s-warn':'s-ok'}"></div>
-          <div>
-            <div class="sp-status-label">${dn?`${s.name} is currently down`:dg?`${s.name} is experiencing issues`:`${s.name} is operational`}</div>
-            <div class="sp-status-sub">${dn?`${s.reports.toLocaleString()} user reports ┬╖ Updated just now`:dg?`${s.reports.toLocaleString()} reports of slowness ┬╖ Monitoring`:` ${s.u}% uptime ┬╖ ${s.r}ms avg response`}</div>
-          </div>
-        </div>
-        <p class="sp-desc">
-          Check the real-time status of ${s.name} below. We monitor ${s.name} every 60 seconds using official status APIs and crowdsourced user reports.
-          ${dn?`There is currently an active ${s.name} outage affecting users.`
-          :dg?`${s.name} is experiencing degraded performance right now.`
-          :`${s.name} appears to be working normally for all users.`}
-        </p>
+    <!-- TOP NAV BAR -->
+    <div class="sp-topbar">
+      <a href="/" onclick="navigate(event,'/')" class="sp-back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All services
+      </a>
+      <div class="sp-breadcrumb-trail">
+        <span>IsDown.live</span>
+        <span class="sp-bc-sep">/</span>
+        <span class="sp-bc-current">${s.name}</span>
       </div>
-      <div class="sp-hero-right">
-        <!-- QUICK ALERT -->
-        <div class="sp-alert-card">
-          <div class="sp-alert-title">≡ƒöö Get notified when it's back</div>
-          <div class="sp-alert-sub">Enter your email ΓÇö we'll alert you the moment ${s.name} recovers.</div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="sp-hero-new ${dn?'sp-hero-down':dg?'sp-hero-deg':'sp-hero-up'}">
+      <div class="sp-hero-inner">
+        <div class="sp-hero-identity">
+          <div class="sp-logo-circle">
+            <img src="${logo(s.d)}" alt="${s.name}" width="44" height="44" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="sp-hero-cat">${s.cat}</div>
+            <h1 class="sp-hero-title">${s.name}</h1>
+          </div>
+        </div>
+        <div class="sp-hero-status-block">
+          <div class="sp-big-status ${dn?'sp-big-down':dg?'sp-big-deg':'sp-big-up'}">
+            <div class="sp-big-dot ${dn?'s-bad':dg?'s-warn':'s-ok'}"></div>
+            <span>${dn?'Down':dg?'Degraded':'Operational'}</span>
+          </div>
+          <div class="sp-hero-sub">${
+            dn?`${s.reports.toLocaleString()} reports &middot; Updated just now`
+            :dg?`${s.reports.toLocaleString()} reports &middot; Monitoring`
+            :`${s.u}% uptime &middot; ${s.r}ms response`
+          }</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <div class="sp-stats-strip">
+      <div class="sp-stat-pill">
+        <div class="sp-stat-pill-val" style="color:${statusColor}">${statusLabel}</div>
+        <div class="sp-stat-pill-lbl">Status</div>
+      </div>
+      <div class="sp-stat-pill">
+        <div class="sp-stat-pill-val">${s.u}%</div>
+        <div class="sp-stat-pill-lbl">30-day uptime</div>
+      </div>
+      <div class="sp-stat-pill">
+        <div class="sp-stat-pill-val ${dn?'sp-val-bad':s.r&&s.r>280?'sp-val-warn':''}">${dn?'Timeout':s.r?s.r+'ms':'N/A'}</div>
+        <div class="sp-stat-pill-lbl">Response</div>
+      </div>
+      <div class="sp-stat-pill">
+        <div class="sp-stat-pill-val ${s.reports>0?'sp-val-bad':''}">${s.reports>0?s.reports.toLocaleString():'0'}</div>
+        <div class="sp-stat-pill-lbl">Reports now</div>
+      </div>
+    </div>
+
+    <!-- TWO COLUMN LAYOUT -->
+    <div class="sp-two-col">
+
+      <!-- LEFT COLUMN -->
+      <div class="sp-col-main">
+
+        <!-- CHART -->
+        <div class="sp-card-new">
+          <div class="sp-card-header">
+            <h2 class="sp-card-title">Outage reports &mdash; last 24h</h2>
+          </div>
+          <div style="position:relative;height:140px;width:100%"><canvas id="${chartId}"></canvas></div>
+          <div class="chart-labels" style="margin-top:6px">
+            <span>24h ago</span><span>18h ago</span><span>12h ago</span><span>6h ago</span><span>Now</span>
+          </div>
+        </div>
+
+        <!-- PROBLEM BREAKDOWN -->
+        <div class="sp-card-new">
+          <div class="sp-card-header">
+            <h2 class="sp-card-title">What users are reporting</h2>
+          </div>
+          <div class="cat-breakdown">
+            ${catData.map(c=>`
+              <div class="cat-row">
+                <div class="cat-label">${c.l}</div>
+                <div class="cat-bar-wrap"><div class="cat-bar" style="width:${c.v}%;background:${dn?'var(--bad)':dg?'var(--warn)':'var(--ok)'}"></div></div>
+                <div class="cat-pct">${c.v}%</div>
+              </div>`).join('')}
+          </div>
+        </div>
+
+        <!-- REGION HEATMAP -->
+        <div class="sp-card-new">
+          <div class="sp-card-header">
+            <h2 class="sp-card-title">Affected regions</h2>
+          </div>
+          <div class="heatmap-wrap" id="spHeatmap" style="height:140px"></div>
+          <div class="heatmap-legend" style="margin-top:8px">
+            <span>Low</span>
+            <div class="heatmap-legend-bar">
+              <div class="hmap-sq" style="background:rgba(48,209,88,.3)"></div>
+              <div class="hmap-sq" style="background:rgba(255,159,10,.5)"></div>
+              <div class="hmap-sq" style="background:rgba(255,59,48,.7)"></div>
+              <div class="hmap-sq" style="background:rgba(255,59,48,.95)"></div>
+            </div>
+            <span>High</span>
+          </div>
+        </div>
+
+        <!-- SOCIAL MENTIONS -->
+        <div class="sp-card-new">
+          <div class="sp-card-header">
+            <h2 class="sp-card-title">What people are saying on Reddit</h2>
+          </div>
+          <div class="reddit-link-box">
+            <div class="reddit-link-icon">&#128172;</div>
+            <div class="reddit-link-body">
+              <div class="reddit-link-title">Search Reddit for "${s.name} down"</div>
+              <div class="reddit-link-sub">See real user reports, outage discussions, and workarounds from the ${s.name} community.</div>
+            </div>
+            <a class="reddit-link-btn" href="https://www.reddit.com/search/?q=${encodeURIComponent(s.name+' down')}&sort=new" target="_blank" rel="noopener">View on Reddit &#8599;</a>
+          </div>
+          <div class="reddit-subs-row">
+            <a class="reddit-sub-chip" href="https://www.reddit.com/search/?q=${encodeURIComponent(s.name+' outage')}&sort=new" target="_blank" rel="noopener">r/ ${s.name} outage</a>
+            <a class="reddit-sub-chip" href="https://www.reddit.com/search/?q=${encodeURIComponent(s.name+' not working')}&sort=new" target="_blank" rel="noopener">r/ not working</a>
+            <a class="reddit-sub-chip" href="https://www.reddit.com/search/?q=${encodeURIComponent(s.name+' issues today')}&sort=new" target="_blank" rel="noopener">r/ issues today</a>
+          </div>
+        </div>
+
+        <!-- INCIDENT HISTORY -->
+        <div class="sp-card-new">
+          <div class="sp-card-header">
+            <h2 class="sp-card-title">Incident history</h2>
+          </div>
+          <div id="spIncFeed"></div>
+        </div>
+
+        <!-- SEO BLOCK -->
+        <div class="sp-card-new sp-seo-block">
+          <h2>About ${s.name} status monitoring</h2>
+          <p>IsDown.live monitors ${s.name} in real-time by polling official status APIs and aggregating user reports. Our system checks ${s.name} every 60 seconds and immediately shows any outages, degradation, or service disruptions.</p>
+          <p>Common ${s.name} problems include login issues, slow loading, payment errors, and app crashes. No account needed &mdash; always free.</p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN (sticky sidebar) -->
+      <div class="sp-col-side">
+
+        <!-- ALERT CARD -->
+        <div class="sp-card-new sp-alert-new">
+          
+          <h3 class="sp-alert-new-title">Get notified when it's back</h3>
+          <p class="sp-alert-new-sub">We'll email you the moment ${s.name} recovers.</p>
           <div class="sp-alert-row">
             <input id="spEmail" class="sh-inp" type="email" placeholder="you@email.com">
             <button class="sh-notify" onclick="spNotify('${s.id}','${s.name}')">Alert me</button>
           </div>
           <button class="sp-push-btn" onclick="enablePushForService('${s.id}','${s.name}')">
-            ≡ƒöö Enable push notification instead
+            Push notification instead
           </button>
         </div>
-      </div>
-    </div>
 
-    <!-- STATS ROW -->
-    <div class="sp-stats">
-      <div class="sp-stat">
-        <div class="sp-stat-val" style="color:${statusColor}">${statusLabel}</div>
-        <div class="sp-stat-lbl">Current status</div>
-      </div>
-      <div class="sp-stat">
-        <div class="sp-stat-val">${s.u}%</div>
-        <div class="sp-stat-lbl">30-day uptime</div>
-      </div>
-      <div class="sp-stat">
-        <div class="sp-stat-val ${dn?'s-bad':s.r>280?'s-warn':''}">${dn?'Timeout':s.r+'ms'}</div>
-        <div class="sp-stat-lbl">Response time</div>
-      </div>
-      <div class="sp-stat">
-        <div class="sp-stat-val ${s.reports>0?'s-bad':''}">${s.reports>0?s.reports.toLocaleString():'0'}</div>
-        <div class="sp-stat-lbl">Reports right now</div>
-      </div>
-    </div>
-
-    <!-- 24H CHART -->
-    <div class="sp-section">
-      <h2 class="sp-section-title">${s.name} outage reports ΓÇö last 24 hours</h2>
-      <div class="sp-card">
-        <div style="position:relative;height:160px;width:100%"><canvas id="${chartId}"></canvas></div>
-        <div class="chart-labels" style="margin-top:6px">
-          <span>24h ago</span><span>18h ago</span><span>12h ago</span><span>6h ago</span><span>Now</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROBLEM BREAKDOWN -->
-    <div class="sp-section">
-      <h2 class="sp-section-title">What problems are ${s.name} users reporting?</h2>
-      <div class="sp-card">
-        <div class="cat-breakdown">
-          ${catData.map(c=>`
-            <div class="cat-row">
-              <div class="cat-label">${c.l}</div>
-              <div class="cat-bar-wrap"><div class="cat-bar" style="width:${c.v}%;background:${dn?'var(--bad)':dg?'var(--warn)':'var(--ok)'}"></div></div>
-              <div class="cat-pct">${c.v}%</div>
-            </div>`).join('')}
-        </div>
-      </div>
-    </div>
-
-    <!-- HEATMAP -->
-    <div class="sp-section">
-      <h2 class="sp-section-title">Which regions are affected?</h2>
-      <div class="sp-card">
-        <div class="heatmap-wrap" id="spHeatmap" style="height:160px"></div>
-        <div class="heatmap-legend" style="margin-top:8px">
-          <span>Low impact</span>
-          <div class="heatmap-legend-bar">
-            <div class="hmap-sq" style="background:rgba(48,209,88,.3)"></div>
-            <div class="hmap-sq" style="background:rgba(255,159,10,.5)"></div>
-            <div class="hmap-sq" style="background:rgba(255,59,48,.7)"></div>
-            <div class="hmap-sq" style="background:rgba(255,59,48,.95)"></div>
+        <!-- REPORT CARD -->
+        <div class="sp-card-new">
+          <div class="sp-card-header">
+            <h2 class="sp-card-title">Report a problem</h2>
           </div>
-          <span>High impact</span>
+          <div class="cat-radio-grid" id="spCatRadios">
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="login"><span class="cat-radio-icon">&#128272;</span>Can't log in</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="speed"><span class="cat-radio-icon">&#128034;</span>Very slow</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="crash"><span class="cat-radio-icon">&#128165;</span>App crashing</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="payment"><span class="cat-radio-icon">&#128179;</span>Payment error</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="content"><span class="cat-radio-icon">&#128205;</span>Not loading</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="other"><span class="cat-radio-icon">&#10067;</span>Other</label>
+          </div>
+          <button class="sp-submit-btn" onclick="spReport('${s.id}','${s.name}')">Submit report</button>
         </div>
-      </div>
-    </div>
 
-    <!-- SOCIAL FEED -->
-    <div class="sp-section">
-      <h2 class="sp-section-title">What people are saying about ${s.name}</h2>
-      <div class="sp-card">
-        <div class="mention-feed" style="max-height:280px">
-          ${mentions.map(m=>`
-            <div class="mention-item">
-              <div class="mention-handle">${m.h} ┬╖ ${m.m}</div>
-              <div class="mention-text">${m.t}</div>
-            </div>`).join('')}
+        <!-- RELATED SERVICES -->
+        <div class="sp-card-new">
+          <div class="sp-card-header">
+            <h2 class="sp-card-title">Related services</h2>
+          </div>
+          <div class="sp-related" id="spRelated"></div>
         </div>
+
       </div>
     </div>
 
-    <!-- REPORT FORM -->
-    <div class="sp-section">
-      <h2 class="sp-section-title">Report a ${s.name} problem</h2>
-      <div class="sp-card">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Having issues with ${s.name}? Let others know ΓÇö your report helps confirm the outage.</p>
-        <div class="cat-radio-grid" id="spCatRadios">
-          <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="login"><span class="cat-radio-icon">≡ƒöÉ</span>Can't log in</label>
-          <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="speed"><span class="cat-radio-icon">≡ƒÉó</span>Very slow</label>
-          <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="crash"><span class="cat-radio-icon">≡ƒÆÑ</span>App crashing</label>
-          <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="payment"><span class="cat-radio-icon">≡ƒÆ│</span>Payment error</label>
-          <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="content"><span class="cat-radio-icon">≡ƒô¡</span>Content not loading</label>
-          <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="other"><span class="cat-radio-icon">Γ¥ô</span>Other issue</label>
-        </div>
-        <button class="sh-notify" style="width:100%" onclick="spReport('${s.id}','${s.name}')">Submit report</button>
+    <!-- FOOTER -->
+    <footer class="sp-footer-new">
+      <a href="/" onclick="navigate(event,'/')" class="sp-footer-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All services
+      </a>
+      <span class="sp-footer-copy">&copy; <span id="spFooterYear"></span> IsDown.live &mdash; ad-free, always</span>
+      <div class="sp-footer-links">
+        <a href="/">Home</a>
+        <a href="mailto:hello@isdown.live">Contact</a>
       </div>
-    </div>
-
-    <!-- INCIDENT HISTORY -->
-    <div class="sp-section">
-      <h2 class="sp-section-title">${s.name} incident history</h2>
-      <div class="sp-card" id="spIncFeed"></div>
-    </div>
-
-    <!-- RELATED SERVICES -->
-    <div class="sp-section">
-      <h2 class="sp-section-title">Related services</h2>
-      <div class="sp-related" id="spRelated"></div>
-    </div>
-
-    <!-- SEO TEXT BLOCK ΓÇö key for Google ranking -->
-    <div class="sp-section">
-      <div class="sp-card sp-seo-block">
-        <h2>About ${s.name} status monitoring</h2>
-        <p>IsDown.live monitors ${s.name} in real-time by polling official status APIs and aggregating user reports. Our system checks ${s.name} every 60 seconds and immediately shows any outages, degradation, or service disruptions.</p>
-        <p>If ${s.name} is down, you'll see an outage indicator at the top of this page along with the number of user reports. You can set up an instant email or push notification so you're the first to know when ${s.name} is back online.</p>
-        <p>Common ${s.name} problems reported by users include login issues, slow loading, payment errors, and app crashes. Use the problem breakdown above to see what other users are experiencing right now.</p>
-        <p>IsDown.live is free, ad-free, and works on all devices. No account required to check ${s.name} status or set up outage alerts.</p>
-      </div>
-    </div>
-
-    <!-- BACK TO TOP + FOOTER -->
-    <div style="text-align:center;margin-bottom:16px">
-      <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Γåæ Back to top</button>
-    </div>
-    <footer class="sp-footer">
-      <a href="/" onclick="navigate(event,'/')">ΓåÉ All services</a>
-      <span>┬⌐ <span id="spFooterYear"></span> IsDown.live ΓÇö ad-free, always</span>
-      <div style="display:flex;gap:16px"><a href="/">Home</a><a href="mailto:hello@isdown.live">Contact</a><a href="/privacy" onclick="navigate(event,'/privacy')">Privacy</a></div>
     </footer>
   `;
 
@@ -1284,16 +1546,20 @@ function renderServicePage(s){
   });
 }
 
-/* ΓöÇΓöÇ Service page helpers ΓöÇΓöÇ */
+/* -- Service page helpers -- */
 function spNotify(id,name){
   const email=document.getElementById('spEmail')?.value?.trim();
-  if(!email||!email.includes('@')){
+  if(!email||!isValidEmail(email)){
     const el=document.getElementById('spEmail');
     if(el){el.style.borderColor='var(--bad)';setTimeout(()=>el.style.borderColor='',1200);}
     return;
   }
+  if(!canSubmitAlert()) return;
   watched.add(id);
-  toast(`Γ£ô Alert set ΓÇö we'll email you when ${name} recovers`);
+  if(!emailSubs.has(id)) emailSubs.set(id, new Set());
+  emailSubs.get(id).add(email);
+  if(Notification.permission === 'granted') pushSubs.set(id, true);
+  toast('\u2713 Alert set — you\'ll be emailed when '+sanitize(name)+' recovers');
 }
 
 function spReport(id,name){
@@ -1303,15 +1569,15 @@ function spReport(id,name){
     .map(l=>l.querySelector('input').value);
   svc.reports=(svc.reports||0)+1;
   if(svc.s==='up') svc.s='degraded';
-  toast(`ΓÜá Report submitted for ${name}${selected.length?' ('+selected.join(', ')+')':''}`);
+  toast(`\u26a0 Report submitted for ${name}${selected.length?' ('+selected.join(', ')+')':''}`);
 }
 
-/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
-   NAVIGATION ΓÇö SPA router
-ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */
+/* ==============================
+   NAVIGATION - SPA router
+============================== */
 function navigate(e, path){
   if(e) e.preventDefault();
-  // Real URL paths for SEO ΓÇö Netlify rewrites all paths to index.html
+  // Real URL paths for SEO - Netlify rewrites all paths to index.html
   window.history.pushState({}, '', path === '/' ? '/' : path);
   route();
 }
@@ -1335,7 +1601,7 @@ function route(){
     // SERVICE PAGE
     const canonicalUrl = `https://isdownlive.netlify.app/${svc.id}`;
     setMeta(
-      `Is ${svc.name} Down Right Now? ΓÇö Live Status | IsDown.live`,
+      `Is ${svc.name} Down Right Now? - Live Status | IsDown.live`,
       `Check if ${svc.name} is down. Real-time outage reports, uptime history, and instant alerts when ${svc.name} recovers. No ads, always free.`,
       canonicalUrl
     );
@@ -1345,20 +1611,20 @@ function route(){
     const spYr = document.getElementById('spFooterYear');
     if(spYr) spYr.textContent = new Date().getFullYear();
   } else if(slug && slug !== '') {
-    // 404 ΓÇö unknown service
+    // 404 - unknown service
     document.getElementById('homePage').style.display='none';
     document.getElementById('svcPage').style.display='block';
     document.getElementById('svcPage').innerHTML=`
       <div style="text-align:center;padding:80px 20px">
-        <div style="font-size:64px;margin-bottom:16px">≡ƒöì</div>
+        <div style="font-size:64px;margin-bottom:16px">&#128269;</div>
         <h1 style="font-size:28px;font-weight:800;margin-bottom:10px">Service not found</h1>
         <p style="color:var(--muted);font-size:15px;margin-bottom:28px">We don't monitor "<strong>${slug}</strong>" yet. Check the full list below.</p>
-        <button class="btn btn-p" onclick="navigate(null,'/')">ΓåÉ Back to all services</button>
+        <button class="btn btn-p" onclick="navigate(null,'/')">\u2190 Back to all services</button>
       </div>`;
   } else {
     // HOMEPAGE
     setMeta(
-      'IsDown.live ΓÇö Is it down for everyone? Real-time Service Status',
+      'IsDown.live - Is it down for everyone? Real-time Service Status',
       'Real-time status checker for 70+ services including Spotify, GitHub, Netflix, Discord, AWS and more. No ads. Instant push alerts when services recover.',
       'https://isdownlive.netlify.app'
     );
@@ -1371,10 +1637,10 @@ function route(){
   }
 }
 
-// Real URL routing ΓÇö back/forward button support
+// Real URL routing - back/forward button support
 window.addEventListener('popstate', route);
 
-/* ΓöÇΓöÇ Init ΓöÇΓöÇ */
+/* -- Init -- */
 updateClock();
 setInterval(updateClock, 1000);
 route(); // router handles rendering
@@ -1395,18 +1661,8 @@ function updateStatStrip(){
 updateStatStrip();
 
 const H=document.documentElement;
-// Theme ΓÇö respect saved preference, default dark
-const savedTheme = localStorage.getItem('theme');
-if(savedTheme === 'light') { H.classList.remove('dark'); } else { H.classList.add('dark'); }
+// Light mode only
+H.classList.remove('dark');
 
-function toggleDark(){
-  const isDark = H.classList.toggle('dark');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  const btn = document.getElementById('themeBtn');
-  if(btn) btn.textContent = isDark ? '≡ƒîÖ' : 'ΓÿÇ∩╕Å';
-}
-// Set initial icon
-const themeBtn = document.getElementById('themeBtn');
-if(themeBtn) themeBtn.textContent = H.classList.contains('dark') ? '≡ƒîÖ' : 'ΓÿÇ∩╕Å';
 // Auto-start live polling
 startPolling();

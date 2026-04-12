@@ -46,7 +46,6 @@
     </div>
     <div class="nav-right">
       <span id="pollStatus" style="font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;display:none"></span>
-      <button onclick="toggleDark()" id="themeBtn" style="background:none;border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--muted);font-size:13px;cursor:pointer;transition:all .13s" title="Toggle theme">🌙</button>
     </div>
   </div>
 </nav>
@@ -64,8 +63,8 @@
       <h1>Is it <span class="gradient-text">down</span> for everyone?</h1>
       <div class="subtitle">Real-time status for 70+ services. No ads, no clutter. Get notified the moment it recovers.</div>
       <div class="hero-btns">
-        <button class="btn btn-p" onclick="document.getElementById('sInput').focus()">🔍 Check a service</button>
-        <button class="btn btn-g" onclick="openSubSheet()">🔔 Get alerts</button>
+        <button class="btn btn-p" onclick="document.getElementById('sInput').focus()">Check a service</button>
+        <button class="btn btn-g" onclick="openSubSheet()">Get alerts</button>
       </div>
     </div>
     <div class="hero-card">
@@ -73,9 +72,9 @@
         <span class="hc-title">Live status</span>
         <div class="live-badge"><div class="live-dot"></div>LIVE</div>
       </div>
-      <div class="stat-r"><span class="stat-lbl">✅ Operational</span><span class="stat-v" id="sumUp" style="color:var(--ok)">—</span></div>
-      <div class="stat-r"><span class="stat-lbl">🔴 Outage</span><span class="stat-v" id="sumDown" style="color:var(--bad)">—</span></div>
-      <div class="stat-r"><span class="stat-lbl">🟡 Degraded</span><span class="stat-v" id="sumDeg" style="color:var(--warn)">—</span></div>
+      <div class="stat-r"><span class="stat-lbl">Operational</span><span class="stat-v" id="sumUp" style="color:var(--ok)">—</span></div>
+      <div class="stat-r"><span class="stat-lbl">Outage</span><span class="stat-v" id="sumDown" style="color:var(--bad)">—</span></div>
+      <div class="stat-r"><span class="stat-lbl">Degraded</span><span class="stat-v" id="sumDeg" style="color:var(--warn)">—</span></div>
       <div class="live-clock" id="liveClock">Checking...</div>
     </div>
   </div>
@@ -150,9 +149,8 @@
   <footer class="footer">
     <span>© <span id="footerYear">2026</span> IsDown.live — ad-free, always</span>
     <div class="footer-links">
-      <a href="mailto:hello@isdown.live">Contact</a>
-      <a href="/privacy" onclick="navigate(event,'/privacy')">Privacy</a>
-      <a href="/" onclick="navigate(event,'/')">Home</a>
+      <a href="mailto:hello@isdown.live">✉️ Contact</a>
+      <a href="/" onclick="navigate(event,'/')">🏠 Home</a>
     </div>
   </footer>
 </div>
