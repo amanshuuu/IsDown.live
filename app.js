@@ -96,7 +96,7 @@ const watched=new Set();
 
 /* -- Helpers -- */
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const logo=d=>`https://www.google.com/s2/favicons?domain=${d}&sz=64`;
+const logo=d=>`https://icon.horse/icon/${d}`;
 
 function toast(msg){
   const t=document.getElementById('toast');
