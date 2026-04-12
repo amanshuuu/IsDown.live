@@ -485,7 +485,7 @@ function openSvcSheet(s){
       <div class="sh-sub" style="margin-bottom:12px">What's the problem? Tap all that apply.</div>
       <div class="cat-radio-grid" id="catRadios">
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="login"><span class="cat-radio-icon">&#128272;</span>Can't log in
+          <input type="checkbox" value="login"><span class="cat-radio-icon">&#128272;</span>Login issue
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
           <input type="checkbox" value="speed"><span class="cat-radio-icon">&#128034;</span>Very slow
@@ -494,10 +494,10 @@ function openSvcSheet(s){
           <input type="checkbox" value="crash"><span class="cat-radio-icon">&#128165;</span>App crashing
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="payment"><span class="cat-radio-icon">&#128179;</span>Payment error
+          <input type="checkbox" value="payment"><span class="cat-radio-icon">&#128179;</span>Payment
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
-          <input type="checkbox" value="content"><span class="cat-radio-icon">&#128205;</span>Content not loading
+          <input type="checkbox" value="content"><span class="cat-radio-icon">&#128683;</span>Not loading
         </label>
         <label class="cat-radio" onclick="toggleCat(this)">
           <input type="checkbox" value="other"><span class="cat-radio-icon">&#10067;</span>Something else
@@ -580,7 +580,7 @@ function openSubSheet(){
              </div>
            </div>`
         : `<div style="font-size:13px;color:var(--muted);margin-bottom:14px">
-             Instant browser notifications — works even when the tab is in the background. No signup needed.
+             Instant browser notifications - works even when the tab is in the background. No signup needed.
            </div>
            <button class="sh-notify" style="width:100%"
              onclick="requestPushPermission().then(p=>{
@@ -589,7 +589,7 @@ function openSubSheet(){
                  closeSheet();
                  toast('\u2713 Push alerts enabled for all down/degraded services');
                } else {
-                 toast('\u26a0 Permission denied — enable in browser settings');
+                 toast('\u26a0 Permission denied - enable in browser settings');
                }
              })">
              Enable push notifications
@@ -601,7 +601,7 @@ function openSubSheet(){
     <div id="sub-email" class="sh-panel">
       ${emailConfigured
         ? `<div style="font-size:13px;color:var(--muted);margin-bottom:12px">
-             Enter your email — you'll get an automatic email the moment any service recovers.
+             Enter your email - you'll get an automatic email the moment any service recovers.
            </div>
            <div class="sh-row">
              <input id="shEA" class="sh-inp" type="email" placeholder="you@email.com">
@@ -615,7 +615,7 @@ function openSubSheet(){
              <ol style="font-size:13px;color:var(--muted);line-height:1.9;padding-left:18px;margin-bottom:12px">
                <li>Go to <a href="https://emailjs.com" target="_blank" style="color:var(--red);font-weight:600">emailjs.com</a> and create a free account</li>
                <li>Add an Email Service (Gmail, Outlook, etc.)</li>
-               <li>Create a template — use variables: <code>{{to_email}}</code>, <code>{{service_name}}</code>, <code>{{message}}</code></li>
+               <li>Create a template - use variables: <code>{{to_email}}</code>, <code>{{service_name}}</code>, <code>{{message}}</code></li>
                <li>Copy your Service ID, Template ID, and Public Key</li>
                <li>Open <strong>app.js</strong> and replace the 3 constants at the top of the ALERT SYSTEM section</li>
              </ol>
@@ -638,7 +638,7 @@ function openSubSheet(){
                <div style="font-size:12px;color:var(--muted);margin-top:2px">Alerts will post to your channel when services recover.</div>
              </div>
            </div>
-           <button class="sh-cancel" style="color:var(--bad);margin-top:8px" onclick="localStorage.removeItem('slack-webhook');closeSheet();toast('Slack disconnected')">Disconnect Slack</button>`
+           <button class="sh-cancel" style="color:var(--bad);margin-top:8px" onclick="disconnectSlack()">Disconnect Slack</button>`
         : `<div style="font-size:13px;color:var(--muted);margin-bottom:12px">
              Post alerts to your Slack channel when services go down or recover.
            </div>
@@ -675,9 +675,7 @@ function switchTab(btn, panelId){
 }
 
 /* -- Category toggle for report -- */
-function toggleCat(label){
-  label.classList.toggle('selected');
-}
+function toggleCat(label){ label.classList.toggle("selected"); }
 
 /* -- Submit report with categories -- */
 function submitReport(id, name){
@@ -755,6 +753,12 @@ checkAllServices = async function(){
   checkAllRecoveries(prevStates);
 };
 
+function disconnectSlack(){
+  localStorage.removeItem('slack-webhook');
+  closeSheet();
+  toast('Slack disconnected');
+}
+
 /* -- Slack webhook -- */
 function saveSlackWebhook(){
   const url=document.getElementById('shSlack')?.value?.trim();
@@ -776,14 +780,14 @@ function saveSlackWebhook(){
   }).then(r=>{
     if(r.ok){
       closeSheet();
-      toast('\u2713 Slack connected — test message sent to your channel');
+      toast('\u2713 Slack connected - test message sent to your channel');
     } else {
-      toast('\u26a0 Webhook saved but test failed — check the URL');
+      toast('\u26a0 Webhook saved but test failed - check the URL');
     }
   }).catch(()=>{
-    // CORS will block this from browser — save anyway
+    // CORS will block this from browser - save anyway
     closeSheet();
-    toast('\u2713 Slack webhook saved — alerts will post on recovery');
+    toast('\u2713 Slack webhook saved - alerts will post on recovery');
   });
 }
 
@@ -887,7 +891,7 @@ function toggleLive(el){
 // Rate limit: max 3 alert signups per session
 const _alertCount = { n: 0 };
 function canSubmitAlert(){
-  if(_alertCount.n >= 10){ toast('\u26a0 Too many requests — try again later'); return false; }
+  if(_alertCount.n >= 10){ toast('\u26a0 Too many requests - try again later'); return false; }
   _alertCount.n++;
   return true;
 }
@@ -949,8 +953,8 @@ async function sendRecoveryEmail(toEmail, serviceName, serviceUrl){
       service_name: safeName,
       service_url:  safeUrl,
       check_url:    checkUrl,
-      subject:      safeName + ' is back online — IsDown.live',
-      message:      'Good news! ' + safeName + ' has fully recovered and is now operational.\n\nCheck live status: ' + checkUrl + '\n\n— IsDown.live'
+      subject:      safeName + ' is back online - IsDown.live',
+      message:      'Good news! ' + safeName + ' has fully recovered and is now operational.\n\nCheck live status: ' + checkUrl + '\n\n- IsDown.live'
     });
     return true;
   } catch(e){
@@ -1047,7 +1051,7 @@ async function submitNotify(id,name){
   emailSubs.get(id).add(email);
   if(Notification.permission === 'granted') pushSubs.set(id, true);
   closeSheet();
-  toast('\u2713 Alert set — you\'ll be notified when '+sanitize(name)+' recovers');
+  toast('\u2713 Alert set - you\'ll be notified when '+sanitize(name)+' recovers');
   applyFilters();
 }
 
@@ -1061,7 +1065,7 @@ async function submitSubAll(){
     Notification.requestPermission();
   }
   closeSheet();
-  toast('\u2713 Subscribed — you\'ll be alerted for any outage recovery');
+  toast('\u2713 Subscribed - you\'ll be alerted for any outage recovery');
 }
 
 /* -- PWA install prompt -- */
@@ -1438,11 +1442,11 @@ function renderServicePage(s){
             <h2 class="sp-card-title">Report a problem</h2>
           </div>
           <div class="cat-radio-grid" id="spCatRadios">
-            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="login"><span class="cat-radio-icon">&#128272;</span>Can't log in</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="login"><span class="cat-radio-icon">&#128272;</span>Login issue</label>
             <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="speed"><span class="cat-radio-icon">&#128034;</span>Very slow</label>
             <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="crash"><span class="cat-radio-icon">&#128165;</span>App crashing</label>
-            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="payment"><span class="cat-radio-icon">&#128179;</span>Payment error</label>
-            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="content"><span class="cat-radio-icon">&#128205;</span>Not loading</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="payment"><span class="cat-radio-icon">&#128179;</span>Payment</label>
+            <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="content"><span class="cat-radio-icon">&#128683;</span>Not loading</label>
             <label class="cat-radio" onclick="toggleCat(this)"><input type="checkbox" value="other"><span class="cat-radio-icon">&#10067;</span>Other</label>
           </div>
           <button class="sp-submit-btn" onclick="spReport('${s.id}','${s.name}')">Submit report</button>
@@ -1559,7 +1563,7 @@ function spNotify(id,name){
   if(!emailSubs.has(id)) emailSubs.set(id, new Set());
   emailSubs.get(id).add(email);
   if(Notification.permission === 'granted') pushSubs.set(id, true);
-  toast('\u2713 Alert set — you\'ll be emailed when '+sanitize(name)+' recovers');
+  toast('\u2713 Alert set - you\'ll be emailed when '+sanitize(name)+' recovers');
 }
 
 function spReport(id,name){
